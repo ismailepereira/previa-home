@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema sob medida, automações e bots para quem perde tempo com ferramenta | Ismaile Pereira</title>
+  <meta name="description" content="Sistema escrito para o seu processo, automações ligando o que você já usa e atendimento automático no WhatsApp. Agende seu orçamento.">
+  <meta name="author" content="Ismaile Pereira">
+  <meta name="robots" content="noindex, nofollow">
+  
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Ismaile Pereira · Soluções Digitais">
+  <meta property="og:title" content="O sistema era pra ajudar. Virou mais trabalho.">
+  <meta property="og:description" content="Sistema escrito para o seu processo, automações ligando o que você já usa e atendimento automático no WhatsApp. Agende seu orçamento.">
+  <meta property="og:url" content="https://ismailepereira.com.br/para/ganhar-tempo/">
+  <meta property="og:image" content="https://ismailepereira.com.br/src/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23FBF9F2'/%3E%3Cpath d='M30 62 a20 20 0 0 1 40 0 z' fill='%23BF5A30'/%3E%3Crect x='22' y='70' width='56' height='4' rx='2' fill='%232E3A2F'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2/dist/iconify-icon.min.js"></script>
+  <script>
+    tailwind.config={theme:{extend:{
+      fontFamily:{sans:['"Plus Jakarta Sans"','Inter','sans-serif'],mono:['"JetBrains Mono"','monospace']},
+      colors:{canvas:'#FBF9F2',surface:'#FFFFFF',ink:'#2E3A2F',body:'#4A5A45',subtle:'#8B9A75',line:'#E7E2D6',
+        terra:{DEFAULT:'#BF5A30',dark:'#A24A26',light:'#D4774F'},forest:'#2E3A2F',sage:'#8B9A75'},
+      letterSpacing:{tight:'-0.02em',tighter:'-0.04em'}
+    }}}
+  </script>
+  <link rel="stylesheet" href="../../src/css/site.css">
+  <script>
+    if ('IntersectionObserver' in window &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('anima');
+    }
+  </script>
+</head>
+<body class="w-full relative bg-canvas">
+
+  <div class="fixed inset-0 z-0 technical-grid pointer-events-none"></div>
+  <div class="fixed inset-0 z-0 pointer-events-none" style="background:radial-gradient(60% 50% at 70% 0%,rgba(191,90,48,.05),transparent 70%)"></div>
+
+  <header class="fixed top-0 left-0 right-0 z-50 w-full px-5 py-4 md:px-10 flex justify-between items-center bg-canvas/85 backdrop-blur-md border-b border-line/70">
+    <a href="../../" class="flex items-center gap-2.5" aria-label="Ismaile Pereira, início">
+      <img src="../../src/img/logo.png" alt="" class="w-8 h-8 rounded object-contain">
+      <span class="leading-none">
+        <span class="font-sans text-sm font-extrabold tracking-tight text-ink block">Ismaile Pereira</span>
+        <span class="mono text-[9px] font-medium tracking-[.15em] text-terra uppercase">Soluções Digitais</span>
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7" aria-label="Navegação principal">
+      <a class="font-sans text-xs font-medium text-subtle hover:text-ink transition-colors" href="../../#servicos">Serviços</a>
+      <a class="font-sans text-xs font-medium text-subtle hover:text-ink transition-colors" href="../../#projetos">Projetos</a>
+      <a class="font-sans text-xs font-medium text-subtle hover:text-ink transition-colors" href="https://ismailepereira.com.br/blog.html">Blog</a>
+    </nav>
+    <a href="#falar" class="group btn-3d relative isolate overflow-hidden text-white text-xs font-semibold px-4 py-2 rounded ring-1 ring-white/10">
+      <span class="relative z-20 inline-flex items-center gap-1.5"><iconify-icon icon="solar:calendar-add-linear" width="14"></iconify-icon> Agendar orçamento</span>
+    </a>
+  </header>
+
+  <div class="relative z-10">
+  <header class="relative px-6 md:px-12 lg:px-20 pt-32 pb-14 max-w-4xl mx-auto text-center" id="topo">
+    <p class="eyebrow" style="justify-content:center">Para quem já é digital e perde tempo</p>
+    <h1 class="font-sans text-4xl md:text-6xl font-extrabold tracking-tighter text-ink leading-[1.02]">
+      O sistema era pra ajudar.<br>
+      <span class="gradient-text">Virou mais trabalho.</span>
+    </h1>
+    <p class="lede mx-auto mt-6" style="max-width:54ch">Você não está no começo: tem site, tem sistema, tem ferramenta. O problema é que elas não conversam entre si, e a sua equipe passa o dia sendo a ponte humana entre uma tela e outra.</p>
+    <div class="flex flex-wrap gap-3 justify-center mt-8">
+      <a href="#falar" class="group btn-3d relative isolate overflow-hidden text-white px-6 py-3 rounded text-sm font-semibold ring-1 ring-white/10">
+        <span class="relative z-20 inline-flex items-center gap-2">Agendar meu orçamento <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon></span>
+      </a>
+      <a href="#provas" class="btn-oco px-6 py-3 rounded text-sm font-semibold text-ink border border-line">Ver sites que já fiz</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="px-6 md:px-12 lg:px-20 py-16 md:py-20 max-w-7xl mx-auto">
+      <div class="section-head">
+        <div class="reveal">
+          <p class="eyebrow">O ponto de partida</p>
+          <h2 class="h-section">Você reconhece alguma dessas?</h2>
+        </div>
+        <p class="lede reveal">Este degrau quase nunca é sobre tecnologia nova. É sobre parar de fazer à mão o que já dá pra ligar.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+          <div class="svc-ic w-10 h-10 rounded-lg flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:copy-linear" width="20"></iconify-icon></div>
+          <h3 class="font-sans text-base font-bold text-ink tracking-tight">&quot;Digito a mesma coisa em três lugares&quot;</h3>
+          <p class="mt-2 text-sm text-body leading-relaxed">Chega no formulário, alguém copia pra planilha, alguém repassa no grupo. Três chances de errar.</p>
+        </article>
+        <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+          <div class="svc-ic w-10 h-10 rounded-lg flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:ticket-linear" width="20"></iconify-icon></div>
+          <h3 class="font-sans text-base font-bold text-ink tracking-tight">&quot;Toda mudança vira chamado&quot;</h3>
+          <p class="mt-2 text-sm text-body leading-relaxed">Precisa de um campo novo, abre suporte, espera semanas e às vezes ainda paga à parte.</p>
+        </article>
+        <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+          <div class="svc-ic w-10 h-10 rounded-lg flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:document-add-linear" width="20"></iconify-icon></div>
+          <h3 class="font-sans text-base font-bold text-ink tracking-tight">&quot;A equipe usa planilha por fora&quot;</h3>
+          <p class="mt-2 text-sm text-body leading-relaxed">Sinal claro de que o sistema não cobre o processo real. O controle que importa está no arquivo de alguém.</p>
+        </article>
+        <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+          <div class="svc-ic w-10 h-10 rounded-lg flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:moon-sleep-linear" width="20"></iconify-icon></div>
+          <h3 class="font-sans text-base font-bold text-ink tracking-tight">&quot;Fora do horário ninguém responde&quot;</h3>
+          <p class="mt-2 text-sm text-body leading-relaxed">Mensagem que chega à noite ou no domingo espera até segunda. Boa parte não espera.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="px-6 md:px-12 lg:px-20 py-16 md:py-20 max-w-7xl mx-auto">
+      <div class="section-head">
+        <div class="reveal">
+          <p class="eyebrow">A solução</p>
+          <h2 class="h-section">Menos tela,<br>mais tempo</h2>
+        </div>
+        <p class="lede reveal">Três frentes que costumam vir juntas, porque resolvem o mesmo problema por ângulos diferentes.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-5">
+        <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+          <div class="svc-ic w-10 h-10 rounded-lg flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:widget-5-linear" width="20"></iconify-icon></div>
+          <h3 class="font-sans text-lg font-bold text-ink tracking-tight">Sistema escrito pro seu processo</h3>
+          <p class="mt-2 text-sm text-body leading-relaxed">Em vez de adaptar a empresa ao software, o contrário. Só os campos que você usa, do jeito que a sua equipe já trabalha.</p>
+        </article>
+        <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+          <div class="svc-ic w-10 h-10 rounded-lg flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:bolt-circle-linear" width="20"></iconify-icon></div>
+          <h3 class="font-sans text-lg font-bold text-ink tracking-tight">Automação entre o que já existe</h3>
+          <p class="mt-2 text-sm text-body leading-relaxed">Formulário que cai na planilha, pedido que vira mensagem, lembrete que dispara sozinho, relatório que chega pronto. Montado em n8n, Zapier ou direto no código.</p>
+        </article>
+        <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+          <div class="svc-ic w-10 h-10 rounded-lg flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:chat-round-dots-linear" width="20"></iconify-icon></div>
+          <h3 class="font-sans text-lg font-bold text-ink tracking-tight">Bot que atende fora do horário</h3>
+          <p class="mt-2 text-sm text-body leading-relaxed">Responde as perguntas de sempre, agenda, coleta dados e passa pro humano na hora certa. No WhatsApp, no Instagram e no Messenger.</p>
+        </article>
+        <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+          <div class="svc-ic w-10 h-10 rounded-lg flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:import-linear" width="20"></iconify-icon></div>
+          <h3 class="font-sans text-lg font-bold text-ink tracking-tight">Migração do que você já tem</h3>
+          <p class="mt-2 text-sm text-body leading-relaxed">Cliente, produto e histórico saem do sistema antigo e entram no novo. Ninguém começa do zero perdendo cadastro.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="px-6 md:px-12 lg:px-20 py-16 md:py-20 max-w-7xl mx-auto">
+      <div class="section-head">
+        <div class="reveal">
+          <p class="eyebrow">O que entrego</p>
+          <h2 class="h-section">O que vem junto,<br>sem cobrar à parte</h2>
+        </div>
+        <p class="lede reveal">Sistema interno mal entregue vira dependência. Estas três coisas evitam isso.</p>
+      </div>
+      <div class="reveal bloco-escuro rounded-2xl text-canvas overflow-hidden">
+        <ul class="grid md:grid-cols-3">
+          <li class="p-8 md:p-10 md:border-r " style="border-color:rgba(244,240,230,.14)">
+            <span class="mono text-xs text-terra-light">01</span>
+            <h3 class="font-sans text-lg font-bold text-canvas mt-3">Acesso por pessoa e histórico</h3>
+            <p class="text-sm mt-2 leading-relaxed" style="color:rgba(244,240,230,.72)">Cada um entra com o próprio login, e toda alteração fica registrada com quem fez e quando.</p>
+          </li>
+          <li class="p-8 md:p-10 md:border-r border-t md:border-t-0" style="border-color:rgba(244,240,230,.14)">
+            <span class="mono text-xs text-terra-light">02</span>
+            <h3 class="font-sans text-lg font-bold text-canvas mt-3">Documentação de uso</h3>
+            <p class="text-sm mt-2 leading-relaxed" style="color:rgba(244,240,230,.72)">Vídeo e texto curto por rotina. Funcionário novo aprende sem depender de quem estava lá quando o sistema nasceu.</p>
+          </li>
+          <li class="p-8 md:p-10  border-t md:border-t-0" style="border-color:rgba(244,240,230,.14)">
+            <span class="mono text-xs text-terra-light">03</span>
+            <h3 class="font-sans text-lg font-bold text-canvas mt-3">Código e dados seus</h3>
+            <p class="text-sm mt-2 leading-relaxed" style="color:rgba(244,240,230,.72)">O banco exporta e o projeto é entregue. Você não fica preso a mim pra continuar.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="px-6 md:px-12 lg:px-20 py-16 md:py-20 max-w-7xl mx-auto">
+      <div class="section-head">
+        <div class="reveal">
+          <p class="eyebrow">Como funciona</p>
+          <h2 class="h-section">Quatro etapas,<br>sem mistério</h2>
+        </div>
+        <p class="lede reveal">Você sabe onde está em cada semana, e o orçamento sai depois da conversa — com o escopo do seu caso escrito.</p>
+      </div>
+      <ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <li class="reveal premium-card rounded-xl p-6">
+          <div class="mono text-[11px] text-terra tracking-widest">01</div>
+          <h3 class="font-sans text-base font-bold text-ink mt-3">Conversa</h3>
+          <p class="text-sm text-body mt-2 leading-relaxed">Vinte minutos no WhatsApp ou na chamada, para eu entender o que o seu negócio faz e o que precisa aparecer no site.</p>
+        </li>
+        <li class="reveal premium-card rounded-xl p-6">
+          <div class="mono text-[11px] text-terra tracking-widest">02</div>
+          <h3 class="font-sans text-base font-bold text-ink mt-3">Proposta</h3>
+          <p class="text-sm text-body mt-2 leading-relaxed">Escopo, prazo e preço por escrito. O valor sai do tamanho do seu caso — não de tabela pronta.</p>
+        </li>
+        <li class="reveal premium-card rounded-xl p-6">
+          <div class="mono text-[11px] text-terra tracking-widest">03</div>
+          <h3 class="font-sans text-base font-bold text-ink mt-3">Construção</h3>
+          <p class="text-sm text-body mt-2 leading-relaxed">Você acompanha por um link real, não por print. Ajuste é feito enquanto está barato: antes de subir.</p>
+        </li>
+        <li class="reveal premium-card rounded-xl p-6">
+          <div class="mono text-[11px] text-terra tracking-widest">04</div>
+          <h3 class="font-sans text-base font-bold text-ink mt-3">No ar</h3>
+          <p class="text-sm text-body mt-2 leading-relaxed">Publico, entrego os acessos e gravo o vídeo do manual. O site fica seu, inteiro.</p>
+        </li>
+      </ol>
+    </section>
+  </main>
+  </div>
+
+  <section id="falar" class="cta-band relative z-10 px-6 md:px-12 lg:px-20 py-20 md:py-24">
+    <div class="cta-bg" aria-hidden="true"><img src="../../src/img/proj/postos-savana.webp" alt="" loading="lazy"></div>
+    <div class="max-w-3xl mx-auto reveal">
+      <p class="eyebrow" style="justify-content:center;color:#D4774F">Próximo passo</p>
+      <h2 class="h-section" style="color:#FBF9F2">Vamos devolver esse tempo?</h2>
+      <p class="lede mx-auto mt-4" style="color:rgba(244,240,230,.78);text-align:center">Me conta que ferramenta você usa hoje e onde a equipe mais perde tempo. Eu volto com escopo, prazo e preço por escrito — o valor sai do tamanho do seu caso, não de tabela.</p>
+      <div class="flex flex-wrap gap-3 justify-center mt-8">
+        <a href="https://wa.me/5569999688625?text=Oi%20Ismaile%21%20Meu%20sistema%20atual%20atrapalha%20e%20eu%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" class="btn-3d text-white px-6 py-3 rounded text-sm font-semibold inline-flex items-center gap-2">
+          <iconify-icon icon="solar:chat-round-line-linear" width="16"></iconify-icon> Falar no WhatsApp
+        </a>
+        <a href="../../#agendar" class="px-6 py-3 rounded text-sm font-semibold text-canvas border inline-flex items-center gap-2" style="border-color:rgba(244,240,230,.3)">
+          <iconify-icon icon="solar:calendar-add-linear" width="16"></iconify-icon> Escolher dia e horário
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="relative z-10 bg-forest text-canvas px-6 md:px-12 lg:px-20 py-12" style="border-top:1px solid rgba(244,240,230,.14)">
+    <div class="max-w-7xl mx-auto grid gap-8 md:grid-cols-3">
+      <div>
+        <div class="font-sans text-base font-extrabold tracking-tight">Ismaile Pereira</div>
+        <div class="mono text-[10px] uppercase tracking-[.15em] text-terra-light mt-1">Soluções Digitais</div>
+        <p class="text-sm mt-3" style="color:rgba(244,240,230,.7)">Anapu · Pará<br>Atendimento 100% online</p>
+      </div>
+      <nav class="flex flex-col gap-2" aria-label="Rodapé">
+        <a class="text-sm hover:text-terra-light transition-colors" style="color:rgba(244,240,230,.8)" href="../../#servicos">Serviços</a>
+        <a class="text-sm hover:text-terra-light transition-colors" style="color:rgba(244,240,230,.8)" href="../../#projetos">Projetos</a>
+        <a class="text-sm hover:text-terra-light transition-colors" style="color:rgba(244,240,230,.8)" href="https://ismailepereira.com.br/blog.html">Blog</a>
+      </nav>
+      <div>
+        <a href="https://wa.me/5569999688625" target="_blank" rel="noopener" class="btn-3d inline-flex items-center gap-2 text-white px-5 py-2.5 rounded text-sm font-semibold">
+          <iconify-icon icon="solar:chat-round-line-linear" width="16"></iconify-icon> (69) 99968-8625
+        </a>
+        <p class="text-sm mt-3" style="color:rgba(244,240,230,.7)">ismailepereiramachado@gmail.com</p>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto mt-10 pt-6 text-xs" style="border-top:1px solid rgba(244,240,230,.14);color:rgba(244,240,230,.55)">
+      © 2026 Ismaile Pereira · Desenvolvido por
+      <a href="https://ismailepereira.github.io/" target="_blank" rel="noopener" class="text-terra-light hover:underline">ismailepereira</a>
+    </div>
+  </footer>
+
+  <script src="../../src/js/site.js" defer></script>
+</body>
+</html>

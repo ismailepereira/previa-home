@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja online para quem só vende no balcão | Ismaile Pereira</title>
+  <meta name="description" content="Catálogo por categoria, busca, carrinho, meio de pagamento e cálculo de frete, com cadastro de produto feito por você. Agende seu orçamento.">
+  <meta name="author" content="Ismaile Pereira">
+  <meta name="robots" content="noindex, nofollow">
+  
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Ismaile Pereira · Soluções Digitais">
+  <meta property="og:title" content="Vende bem no balcão. E só no balcão.">
+  <meta property="og:description" content="Catálogo por categoria, busca, carrinho, meio de pagamento e cálculo de frete, com cadastro de produto feito por você. Agende seu orçamento.">
+  <meta property="og:url" content="https://ismailepereira.com.br/para/vender-online/">
+  <meta property="og:image" content="https://ismailepereira.com.br/src/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23FBF9F2'/%3E%3Cpath d='M30 62 a20 20 0 0 1 40 0 z' fill='%23BF5A30'/%3E%3Crect x='22' y='70' width='56' height='4' rx='2' fill='%232E3A2F'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2/dist/iconify-icon.min.js"></script>
+  <script>
+    tailwind.config={theme:{extend:{
+      fontFamily:{sans:['"Plus Jakarta Sans"','Inter','sans-serif'],mono:['"JetBrains Mono"','monospace']},
+      colors:{canvas:'#FBF9F2',surface:'#FFFFFF',ink:'#2E3A2F',body:'#4A5A45',subtle:'#8B9A75',line:'#E7E2D6',
+        terra:{DEFAULT:'#BF5A30',dark:'#A24A26',light:'#D4774F'},forest:'#2E3A2F',sage:'#8B9A75'},
+      letterSpacing:{tight:'-0.02em',tighter:'-0.04em'}
+    }}}
+  </script>
+  <link rel="stylesheet" href="../../src/css/site.css">
+  <script>
+    if ('IntersectionObserver' in window &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('anima');
+    }
+  </script>
+</head>
+<body class="w-full relative bg-canvas">
+
+  <div class="fixed inset-0 z-0 technical-grid pointer-events-none"></div>
+  <div class="fixed inset-0 z-0 pointer-events-none" style="background:radial-gradient(60% 50% at 70% 0%,rgba(191,90,48,.05),transparent 70%)"></div>
+
+  <header class="fixed top-0 left-0 right-0 z-50 w-full px-5 py-4 md:px-10 flex justify-between items-center bg-canvas/85 backdrop-blur-md border-b border-line/70">
+    <a href="../../" class="flex items-center gap-2.5" aria-label="Ismaile Pereira, início">
+      <img src="../../src/img/logo.png" alt="" class="w-8 h-8 rounded object-contain">
+      <span class="leading-none">
+        <span class="font-sans text-sm font-extrabold tracking-tight text-ink block">Ismaile Pereira</span>
+        <span class="mono text-[9px] font-medium tracking-[.15em] text-terra uppercase">Soluções Digitais</span>
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7" aria-label="Navegação principal">
+      <a class="font-sans text-xs font-medium text-subtle hover:text-ink transition-colors" href="../../#servicos">Serviços</a>
+      <a class="font-sans text-xs font-medium text-subtle hover:text-ink transition-colors" href="../../#projetos">Projetos</a>
+      <a class="font-sans text-xs font-medium text-subtle hover:text-ink transition-colors" href="https://ismailepereira.com.br/blog.html">Blog</a>
+    </nav>
+    <a href="#falar" class="group btn-3d relative isolate overflow-hidden text-white text-xs font-semibold px-4 py-2 rounded ring-1 ring-white/10">
+      <span class="relative z-20 inline-flex items-center gap-1.5"><iconify-icon icon="solar:calendar-add-linear" width="14"></iconify-icon> Agendar orçamento</span>
+    </a>
+  </header>
+
+  <div class="relative z-10">
+  <header class="relative px-6 md:px-12 lg:px-20 pt-32 pb-14 max-w-4xl mx-auto text-center" id="topo">
+    <p class="eyebrow" style="justify-content:center">Para quem quer vender fora do balcão</p>
+    <h1 class="font-sans text-4xl md:text-6xl font-extrabold tracking-tighter text-ink leading-[1.02]">
+      Vende bem no balcão.<br>
+      <span class="gradient-text">E só no balcão.</span>
+    </h1>
+    <p class="lede mx-auto mt-6" style="max-width:54ch">Quem passa na porta compra. Quem está a dois bairros de distância, ou na cidade vizinha, teria comprado — se conseguisse ver o que você tem e pagar sem depender de uma conversa.</p>
+    <div class="flex flex-wrap gap-3 justify-center mt-8">
+      <a href="#falar" class="group btn-3d relative isolate overflow-hidden text-white px-6 py-3 rounded text-sm font-semibold ring-1 ring-white/10">
+        <span class="relative z-20 inline-flex items-center gap-2">Agendar meu orçamento <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon></span>
+      </a>
+      <a href="#provas" class="btn-oco px-6 py-3 rounded text-sm font-semibold text-ink border border-line">Ver sites que já fiz</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="px-6 md:px-12 lg:px-20 py-16 md:py-20 max-w-7xl mx-auto">
+      <div class="section-head">
+        <div class="reveal">
+          <p class="eyebrow">O ponto de partida</p>
+          <h2 class="h-section">Você reconhece alguma dessas?</h2>
+        </div>
+        <p class="lede reveal">Vender por mensagem funciona até o dia em que chega mensagem demais.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+          <div class="svc-ic w-10 h-10 rounded-lg flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:gallery-send-linear" width="20"></iconify-icon></div>
+          <h3 class="font-sans text-base font-bold text-ink tracking-tight">&quot;Mando foto e preço o dia inteiro&quot;</h3>
+          <p class="mt-2 text-sm text-body leading-relaxed">A mesma foto, o mesmo preço, pra pessoas diferentes. Trabalho que não acaba e não escala.</p>
+        </article>
+        <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+          <div class="svc-ic w-10 h-10 rounded-lg flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:cart-cross-linear" width="20"></iconify-icon></div>
+          <h3 class="font-sans text-base font-bold text-ink tracking-tight">&quot;O pedido se perde na conversa&quot;</h3>
+          <p class="mt-2 text-sm text-body leading-relaxed">Sobe no histórico junto com outras dez mensagens. Quando lembra, o cliente já comprou em outro lugar.</p>
+        </article>
+        <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+          <div class="svc-ic w-10 h-10 rounded-lg flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:eye-closed-linear" width="20"></iconify-icon></div>
+          <h3 class="font-sans text-base font-bold text-ink tracking-tight">&quot;O cliente não vê o que eu tenho&quot;</h3>
+          <p class="mt-2 text-sm text-body leading-relaxed">Não existe vitrine. Ele só compra o que perguntou — nunca o que teria comprado se tivesse visto.</p>
+        </article>
+        <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+          <div class="svc-ic w-10 h-10 rounded-lg flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:map-point-remove-linear" width="20"></iconify-icon></div>
+          <h3 class="font-sans text-base font-bold text-ink tracking-tight">&quot;Quem é de fora não compra&quot;</h3>
+          <p class="mt-2 text-sm text-body leading-relaxed">Sem frete calculado e sem pagamento online, quem não pode buscar desiste na primeira dúvida.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="px-6 md:px-12 lg:px-20 py-16 md:py-20 max-w-7xl mx-auto">
+      <div class="section-head">
+        <div class="reveal">
+          <p class="eyebrow">A solução</p>
+          <h2 class="h-section">Uma vitrine aberta<br>vinte e quatro horas</h2>
+        </div>
+        <p class="lede reveal">Loja que você mesmo abastece, sem depender de mim pra cadastrar produto ou mudar preço.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-5">
+        <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+          <div class="svc-ic w-10 h-10 rounded-lg flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:widget-6-linear" width="20"></iconify-icon></div>
+          <h3 class="font-sans text-lg font-bold text-ink tracking-tight">Catálogo por categoria e busca</h3>
+          <p class="mt-2 text-sm text-body leading-relaxed">O cliente navega, filtra e acha. Vê o que tem, a foto, a descrição e o preço, sem perguntar nada.</p>
+        </article>
+        <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+          <div class="svc-ic w-10 h-10 rounded-lg flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:cart-large-2-linear" width="20"></iconify-icon></div>
+          <h3 class="font-sans text-lg font-bold text-ink tracking-tight">Carrinho de verdade</h3>
+          <p class="mt-2 text-sm text-body leading-relaxed">Junta vários itens, altera quantidade e fecha de uma vez. O pedido chega organizado, não em pedaços.</p>
+        </article>
+        <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+          <div class="svc-ic w-10 h-10 rounded-lg flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:card-linear" width="20"></iconify-icon></div>
+          <h3 class="font-sans text-lg font-bold text-ink tracking-tight">Pagamento e frete</h3>
+          <p class="mt-2 text-sm text-body leading-relaxed">Pix, cartão e boleto pelo meio que você escolher, com frete calculado por CEP ou taxa de entrega por bairro.</p>
+        </article>
+        <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+          <div class="svc-ic w-10 h-10 rounded-lg flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:upload-square-linear" width="20"></iconify-icon></div>
+          <h3 class="font-sans text-lg font-bold text-ink tracking-tight">Cadastro na sua mão</h3>
+          <p class="mt-2 text-sm text-body leading-relaxed">Produto novo, foto, preço e promoção entram por um painel simples. Você não fica esperando fornecedor pra mudar vitrine.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="px-6 md:px-12 lg:px-20 py-16 md:py-20 max-w-7xl mx-auto">
+      <div class="section-head">
+        <div class="reveal">
+          <p class="eyebrow">O que entrego</p>
+          <h2 class="h-section">O que vem junto,<br>sem cobrar à parte</h2>
+        </div>
+        <p class="lede reveal">Loja é operação diária. Vem preparada pra ser tocada por quem está no balcão.</p>
+      </div>
+      <div class="reveal bloco-escuro rounded-2xl text-canvas overflow-hidden">
+        <ul class="grid md:grid-cols-3">
+          <li class="p-8 md:p-10 md:border-r " style="border-color:rgba(244,240,230,.14)">
+            <span class="mono text-xs text-terra-light">01</span>
+            <h3 class="font-sans text-lg font-bold text-canvas mt-3">Treinamento gravado</h3>
+            <p class="text-sm mt-2 leading-relaxed" style="color:rgba(244,240,230,.72)">Vídeo curto mostrando cadastrar produto, mudar preço, ver pedido e dar baixa. Serve pra quem entrar na equipe depois.</p>
+          </li>
+          <li class="p-8 md:p-10 md:border-r border-t md:border-t-0" style="border-color:rgba(244,240,230,.14)">
+            <span class="mono text-xs text-terra-light">02</span>
+            <h3 class="font-sans text-lg font-bold text-canvas mt-3">Pedido onde você já trabalha</h3>
+            <p class="text-sm mt-2 leading-relaxed" style="color:rgba(244,240,230,.72)">O pedido cai no e-mail e no WhatsApp, além do painel. Ninguém precisa ficar de olho numa tela nova o dia inteiro.</p>
+          </li>
+          <li class="p-8 md:p-10  border-t md:border-t-0" style="border-color:rgba(244,240,230,.14)">
+            <span class="mono text-xs text-terra-light">03</span>
+            <h3 class="font-sans text-lg font-bold text-canvas mt-3">Medição instalada</h3>
+            <p class="text-sm mt-2 leading-relaxed" style="color:rgba(244,240,230,.72)">Analytics e Pixel configurados com evento de compra. Sem isso não dá pra anunciar a loja depois.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="provas" class="px-6 md:px-12 lg:px-20 py-16 md:py-20 max-w-7xl mx-auto">
+      <div class="section-head">
+        <div class="reveal">
+          <p class="eyebrow">Prova</p>
+          <h2 class="h-section">Loja montada<br>e navegável</h2>
+        </div>
+        <p class="lede reveal">Abra, navegue pelas categorias e veja o carrinho funcionando.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <a class="reveal premium-card group rounded-xl overflow-hidden flex flex-col" href="https://casa-do-boi.vercel.app" target="_blank" rel="noopener">
+          <div class="work-shot relative aspect-[4/3] overflow-hidden bg-canvas border-b border-line">
+            <img src="../../src/img/proj/casa-do-boi.webp" width="1080" height="810" loading="lazy" decoding="async" alt="Site Casa do Boi FOS, captura de tela" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]">
+          </div>
+          <div class="p-5">
+            <div class="flex items-baseline justify-between gap-3">
+              <h3 class="font-sans text-base font-bold text-ink tracking-tight">Casa do Boi FOS</h3>
+              <span class="mono text-[9px] uppercase tracking-wider text-subtle shrink-0">E-commerce</span>
+            </div>
+            <p class="text-sm text-body mt-2 leading-relaxed">E-commerce de agropecuária em Next.js 15 com catálogo por categoria e busca. Checkout na próxima fase.</p>
+            <div class="mt-4 pt-3 border-t border-line flex items-center justify-between gap-2">
+              <span class="mono text-[10px] uppercase tracking-wider text-subtle">Demonstração</span>
+              <span class="mono text-[10px] text-terra group-hover:underline truncate">casa-do-boi.vercel.app →</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="px-6 md:px-12 lg:px-20 py-16 md:py-20 max-w-7xl mx-auto">
+      <div class="section-head">
+        <div class="reveal">
+          <p class="eyebrow">Como funciona</p>
+          <h2 class="h-section">Quatro etapas,<br>sem mistério</h2>
+        </div>
+        <p class="lede reveal">Você sabe onde está em cada semana, e o orçamento sai depois da conversa — com o escopo do seu caso escrito.</p>
+      </div>
+      <ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <li class="reveal premium-card rounded-xl p-6">
+          <div class="mono text-[11px] text-terra tracking-widest">01</div>
+          <h3 class="font-sans text-base font-bold text-ink mt-3">Conversa</h3>
+          <p class="text-sm text-body mt-2 leading-relaxed">Vinte minutos no WhatsApp ou na chamada, para eu entender o que o seu negócio faz e o que precisa aparecer no site.</p>
+        </li>
+        <li class="reveal premium-card rounded-xl p-6">
+          <div class="mono text-[11px] text-terra tracking-widest">02</div>
+          <h3 class="font-sans text-base font-bold text-ink mt-3">Proposta</h3>
+          <p class="text-sm text-body mt-2 leading-relaxed">Escopo, prazo e preço por escrito. O valor sai do tamanho do seu caso — não de tabela pronta.</p>
+        </li>
+        <li class="reveal premium-card rounded-xl p-6">
+          <div class="mono text-[11px] text-terra tracking-widest">03</div>
+          <h3 class="font-sans text-base font-bold text-ink mt-3">Construção</h3>
+          <p class="text-sm text-body mt-2 leading-relaxed">Você acompanha por um link real, não por print. Ajuste é feito enquanto está barato: antes de subir.</p>
+        </li>
+        <li class="reveal premium-card rounded-xl p-6">
+          <div class="mono text-[11px] text-terra tracking-widest">04</div>
+          <h3 class="font-sans text-base font-bold text-ink mt-3">No ar</h3>
+          <p class="text-sm text-body mt-2 leading-relaxed">Publico, entrego os acessos e gravo o vídeo do manual. O site fica seu, inteiro.</p>
+        </li>
+      </ol>
+    </section>
+  </main>
+  </div>
+
+  <section id="falar" class="cta-band relative z-10 px-6 md:px-12 lg:px-20 py-20 md:py-24">
+    <div class="cta-bg" aria-hidden="true"><img src="../../src/img/proj/postos-savana.webp" alt="" loading="lazy"></div>
+    <div class="max-w-3xl mx-auto reveal">
+      <p class="eyebrow" style="justify-content:center;color:#D4774F">Próximo passo</p>
+      <h2 class="h-section" style="color:#FBF9F2">Vamos abrir sua loja online?</h2>
+      <p class="lede mx-auto mt-4" style="color:rgba(244,240,230,.78);text-align:center">Me conta o que você vende, quantos produtos tem e como entrega hoje. Eu volto com escopo, prazo e preço por escrito — o valor sai do tamanho do seu caso, não de tabela.</p>
+      <div class="flex flex-wrap gap-3 justify-center mt-8">
+        <a href="https://wa.me/5569999688625?text=Oi%20Ismaile%21%20Eu%20s%C3%B3%20vendo%20no%20balc%C3%A3o%20e%20quero%20um%20or%C3%A7amento%20de%20loja%20online." target="_blank" rel="noopener" class="btn-3d text-white px-6 py-3 rounded text-sm font-semibold inline-flex items-center gap-2">
+          <iconify-icon icon="solar:chat-round-line-linear" width="16"></iconify-icon> Falar no WhatsApp
+        </a>
+        <a href="../../#agendar" class="px-6 py-3 rounded text-sm font-semibold text-canvas border inline-flex items-center gap-2" style="border-color:rgba(244,240,230,.3)">
+          <iconify-icon icon="solar:calendar-add-linear" width="16"></iconify-icon> Escolher dia e horário
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative z-10 px-6 md:px-12 lg:px-20 py-14 max-w-3xl mx-auto text-center">
+    <p class="eyebrow" style="justify-content:center">Não é o seu caso?</p>
+    <h2 class="h-section" style="font-size:clamp(1.3rem,2.6vw,1.9rem)">O sistema que você usa hoje atrapalha mais que ajuda?</h2>
+    <p class="lede mx-auto mt-3">O último degrau é sobre devolver tempo — sistema sob medida, automação e bot.</p>
+    <a href="../../para/ganhar-tempo/" class="btn-oco inline-flex items-center gap-2 mt-6 px-5 py-2.5 rounded text-sm font-semibold text-ink border border-line">
+      Ver essa página <iconify-icon icon="solar:arrow-right-linear" width="15"></iconify-icon>
+    </a>
+  </section>
+
+  <footer class="relative z-10 bg-forest text-canvas px-6 md:px-12 lg:px-20 py-12" style="border-top:1px solid rgba(244,240,230,.14)">
+    <div class="max-w-7xl mx-auto grid gap-8 md:grid-cols-3">
+      <div>
+        <div class="font-sans text-base font-extrabold tracking-tight">Ismaile Pereira</div>
+        <div class="mono text-[10px] uppercase tracking-[.15em] text-terra-light mt-1">Soluções Digitais</div>
+        <p class="text-sm mt-3" style="color:rgba(244,240,230,.7)">Anapu · Pará<br>Atendimento 100% online</p>
+      </div>
+      <nav class="flex flex-col gap-2" aria-label="Rodapé">
+        <a class="text-sm hover:text-terra-light transition-colors" style="color:rgba(244,240,230,.8)" href="../../#servicos">Serviços</a>
+        <a class="text-sm hover:text-terra-light transition-colors" style="color:rgba(244,240,230,.8)" href="../../#projetos">Projetos</a>
+        <a class="text-sm hover:text-terra-light transition-colors" style="color:rgba(244,240,230,.8)" href="https://ismailepereira.com.br/blog.html">Blog</a>
+      </nav>
+      <div>
+        <a href="https://wa.me/5569999688625" target="_blank" rel="noopener" class="btn-3d inline-flex items-center gap-2 text-white px-5 py-2.5 rounded text-sm font-semibold">
+          <iconify-icon icon="solar:chat-round-line-linear" width="16"></iconify-icon> (69) 99968-8625
+        </a>
+        <p class="text-sm mt-3" style="color:rgba(244,240,230,.7)">ismailepereiramachado@gmail.com</p>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto mt-10 pt-6 text-xs" style="border-top:1px solid rgba(244,240,230,.14);color:rgba(244,240,230,.55)">
+      © 2026 Ismaile Pereira · Desenvolvido por
+      <a href="https://ismailepereira.github.io/" target="_blank" rel="noopener" class="text-terra-light hover:underline">ismailepereira</a>
+    </div>
+  </footer>
+
+  <script src="../../src/js/site.js" defer></script>
+</body>
+</html>
