@@ -1,0 +1,162 @@
+/* =============================================================
+   site.css — design system compartilhado do ismailepereira.com.br
+
+   Usado pela home e pelas paginas de segmento em /para/<slug>/.
+   Depende do Tailwind (CDN) para as utilitarias; aqui ficam os
+   tokens, a elevacao e os componentes proprios.
+
+   Nao duplicar este bloco dentro de pagina nenhuma: se precisar de
+   estilo so de uma pagina, use um <style> curto depois deste link.
+   ============================================================= */
+
+    html{scroll-behavior:smooth;scroll-padding-top:80px}
+    body{margin:0;background:#FBF9F2;color:#2E3A2F;font-family:'Plus Jakarta Sans','Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+    .technical-grid{background-size:40px 40px;background-image:linear-gradient(to right,rgba(46,58,47,.045) 1px,transparent 1px),linear-gradient(to bottom,rgba(46,58,47,.045) 1px,transparent 1px);-webkit-mask-image:linear-gradient(to bottom,black 30%,transparent 100%);mask-image:linear-gradient(to bottom,black 30%,transparent 100%)}
+    /* ---- Elevação ----
+       Uma fonte de luz só, vinda de cima e da esquerda. Toda superfície
+       ganha profundidade por tres coisas na mesma ordem: um degrade sutil
+       no corpo, um fio de luz na borda de cima (inset) e uma sombra em
+       camadas -- contato curto e escuro, difusao longa e leve. */
+    :root{
+      --luz-topo: inset 0 1px 0 rgba(255,255,255,.9);
+      --sombra-1: 0 1px 1px rgba(46,58,47,.04), 0 3px 6px -2px rgba(46,58,47,.06), 0 12px 24px -10px rgba(46,58,47,.10);
+      --sombra-2: 0 2px 3px rgba(46,58,47,.05), 0 8px 16px -4px rgba(46,58,47,.09), 0 26px 48px -16px rgba(46,58,47,.20);
+      --curva: cubic-bezier(.2,.8,.2,1);
+    }
+    .premium-card{
+      background:linear-gradient(180deg,#FFFFFF 0%,#FCFAF6 100%);
+      border:1px solid #E7E2D6;
+      box-shadow:var(--luz-topo),var(--sombra-1);
+      transition:transform .35s var(--curva),box-shadow .35s var(--curva),border-color .35s var(--curva)
+    }
+    .premium-card:hover{transform:translateY(-4px);box-shadow:var(--luz-topo),var(--sombra-2);border-color:#D9D2BF}
+
+    /* Quadradinho do icone: parece prensado no cartao, nao colado nele. */
+    .svc-ic{
+      background:linear-gradient(145deg,rgba(191,90,48,.20),rgba(191,90,48,.06));
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.75),inset 0 -1px 0 rgba(191,90,48,.12),0 2px 6px rgba(191,90,48,.14);
+      transition:transform .35s var(--curva),box-shadow .35s var(--curva)
+    }
+    .premium-card:hover .svc-ic{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.85),0 5px 12px rgba(191,90,48,.22)}
+
+    /* Botao com corpo: degrade vertical, fio de luz em cima e afunda no clique. */
+    .btn-3d{
+      background:linear-gradient(180deg,#CB6738 0%,#BF5A30 55%,#AC4E28 100%);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 1px 2px rgba(46,58,47,.12),0 8px 18px -6px rgba(191,90,48,.55);
+      transition:transform .2s var(--curva),box-shadow .2s var(--curva),filter .2s var(--curva)
+    }
+    .btn-3d:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.34),0 2px 4px rgba(46,58,47,.14),0 14px 26px -8px rgba(191,90,48,.6);filter:saturate(1.06)}
+    .btn-3d:active{transform:translateY(1px);box-shadow:inset 0 2px 5px rgba(0,0,0,.22),0 1px 2px rgba(46,58,47,.12)}
+    .btn-oco{
+      background:linear-gradient(180deg,#FFFFFF,#F7F3EA);
+      box-shadow:var(--luz-topo),0 1px 2px rgba(46,58,47,.05),0 6px 14px -6px rgba(46,58,47,.16);
+      transition:transform .2s var(--curva),box-shadow .2s var(--curva)
+    }
+    .btn-oco:hover{transform:translateY(-2px);box-shadow:var(--luz-topo),0 10px 22px -8px rgba(46,58,47,.24)}
+    .btn-oco:active{transform:translateY(1px);box-shadow:inset 0 2px 5px rgba(46,58,47,.12)}
+    @keyframes shimmer{100%{transform:translateX(100%)}}
+    .shimmer-layer{transform:translateX(-100%)}
+    .group:hover .shimmer-layer{animation:shimmer 1.5s cubic-bezier(.4,0,.2,1) infinite}
+    .mono{font-family:'JetBrains Mono',monospace}
+    .gradient-text{background:linear-gradient(120deg,#BF5A30,#D4774F);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+    /* Cabeça de seção: eyebrow + título de dois tempos à esquerda, lede
+       alinhada embaixo à direita. Mesma peça em todas as seções. */
+    .section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:clamp(1.5rem,4vw,4rem);align-items:end;margin-bottom:clamp(2.5rem,5vw,4rem)}
+    @media (max-width:860px){.section-head{grid-template-columns:1fr;align-items:start;gap:1rem}}
+    .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:#BF5A30;margin:0 0 .9rem}
+    .eyebrow::before{content:"";width:22px;height:1px;background:#BF5A30}
+    .h-section{font-size:clamp(1.85rem,4.2vw,3.1rem);font-weight:800;letter-spacing:-.04em;line-height:1.04;margin:0;color:#2E3A2F}
+    .lede{font-size:1rem;line-height:1.7;color:#4A5A45;margin:0;max-width:46ch}
+
+    /* Faixa de capturas correndo */
+    .marquee{--gap:10px;display:flex;gap:var(--gap);overflow:hidden;border-block:1px solid #E7E2D6;background:linear-gradient(180deg,#F7F3EA,#FFFDF9);box-shadow:inset 0 10px 16px -14px rgba(46,58,47,.5),inset 0 -10px 16px -14px rgba(46,58,47,.5);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+    .marquee-track{display:flex;gap:var(--gap);flex:none;animation:desliza 62s linear infinite}
+    .marquee:hover .marquee-track{animation-play-state:paused}
+    @keyframes desliza{to{transform:translateX(calc(-100% - var(--gap)))}}
+    .marquee figure{margin:0;flex:none;width:clamp(210px,23vw,320px);aspect-ratio:4/3;overflow:hidden;border-radius:6px;box-shadow:0 1px 2px rgba(46,58,47,.10),0 8px 18px -10px rgba(46,58,47,.35);transition:box-shadow .5s var(--curva),transform .5s var(--curva)}
+    .marquee figure:hover{transform:translateY(-3px);box-shadow:0 2px 4px rgba(46,58,47,.12),0 16px 30px -12px rgba(46,58,47,.45)}
+    .marquee img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:saturate(.88);transition:filter .6s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+    .marquee figure:hover img{filter:none;transform:scale(1.04)}
+
+    /* Faixa de números */
+    .stats{
+      border-block:1px solid #E7E2D6;
+      background:linear-gradient(180deg,#FFFDF9 0%,#F7F3EA 100%);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 0 -14px 22px -18px rgba(46,58,47,.35)
+    }
+    .stat{transition:background .35s var(--curva)}
+    .stat:hover{background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,0))}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .stat{padding:clamp(1.6rem,3.4vw,2.8rem) clamp(.75rem,2vw,2rem);text-align:center;border-left:1px solid #E7E2D6}
+    .stat:first-child{border-left:0}
+    .stat-num{display:block;font-size:clamp(2rem,4.6vw,3.4rem);font-weight:800;letter-spacing:-.04em;line-height:1;color:#2E3A2F}
+    .stat-num span{font-size:.42em;color:#8B9A75;letter-spacing:0}
+    .stat-label{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#8B9A75;margin-top:.6rem}
+    @media (max-width:720px){.stats-grid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3){border-left:0}.stat:nth-child(n+3){border-top:1px solid #E7E2D6}}
+
+    /* Faixa de citação */
+    .quote-band{background:linear-gradient(180deg,#FFFDF9,#F6F2E9);border-block:1px solid #E7E2D6;box-shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 0 18px 28px -26px rgba(46,58,47,.45),inset 0 -18px 28px -26px rgba(46,58,47,.45)}
+    .quote-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.62fr);gap:clamp(2rem,6vw,5rem);align-items:center}
+    @media (max-width:860px){.quote-inner{grid-template-columns:1fr}}
+    .quote-band blockquote{margin:0;font-size:clamp(1.4rem,3.2vw,2.3rem);font-weight:800;letter-spacing:-.03em;line-height:1.18;color:#2E3A2F}
+    .quote-band cite{display:block;margin-top:1.2rem;font-family:'JetBrains Mono',monospace;font-size:11px;font-style:normal;text-transform:uppercase;letter-spacing:.16em;color:#8B9A75}
+
+    /* Lista chave/valor */
+    .info-list{list-style:none;margin:2rem 0 0;padding:0}
+    .info-list li{display:grid;grid-template-columns:130px 1fr;gap:1rem;padding:1rem 0;border-top:1px solid #E7E2D6}
+    .info-k{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#8B9A75;padding-top:.25rem}
+    .info-v{font-size:.95rem;color:#2E3A2F;font-weight:600}
+    .info-v small{display:block;font-weight:400;font-size:.85rem;color:#4A5A45;margin-top:.2rem}
+    @media (max-width:560px){.info-list li{grid-template-columns:1fr;gap:.25rem}}
+
+    /* Captura do projeto: sombra interna nas bordas faz a imagem parecer
+       encaixada na moldura, em vez de colada por cima dela. */
+    .work-shot{box-shadow:inset 0 0 0 1px rgba(46,58,47,.05),inset 0 10px 18px -16px rgba(46,58,47,.8)}
+    .work-shot::after{
+      content:"";position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(180deg,rgba(255,255,255,.14),transparent 34%,rgba(46,58,47,.10));
+      transition:opacity .4s var(--curva)
+    }
+    .premium-card:hover .work-shot::after{opacity:.4}
+
+    /* Bloco escuro: degrade diagonal com o canto superior esquerdo mais
+       claro, seguindo a mesma luz do resto da pagina. */
+    .bloco-escuro{
+      background:
+        radial-gradient(120% 90% at 0% 0%,rgba(255,255,255,.10),transparent 55%),
+        linear-gradient(155deg,#3A4A3B 0%,#2E3A2F 48%,#212A22 100%);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 2px 4px rgba(46,58,47,.10),0 26px 50px -20px rgba(46,58,47,.45)
+    }
+    .bloco-escuro li{transition:background .35s var(--curva)}
+    .bloco-escuro li:hover{background:rgba(255,255,255,.035)}
+
+    /* Faixa de fechamento */
+    .cta-band{position:relative;isolation:isolate;background:#2E3A2F;overflow:hidden;text-align:center}
+    .cta-band .cta-bg{position:absolute;inset:0;z-index:-1;opacity:.13}
+    .cta-band .cta-bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(.4)}
+    .cta-band::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(65% 55% at 50% 32%,rgba(191,90,48,.32),transparent 72%),radial-gradient(120% 100% at 50% 100%,rgba(0,0,0,.42),transparent 60%)}
+    .cta-band{box-shadow:inset 0 1px 0 rgba(255,255,255,.10)}
+
+    /* Fichas do agendamento */
+    .ficha{border:1px solid #E7E2D6;background:#fff;color:#4A5A45;transition:all .2s cubic-bezier(.2,.8,.2,1);cursor:pointer}
+    .ficha:hover{border-color:#BF5A30;color:#2E3A2F}
+    .ficha[aria-pressed="true"]{background:#BF5A30;border-color:#BF5A30;color:#fff}
+    .ficha:focus-visible{outline:2px solid #BF5A30;outline-offset:2px}
+    .campo{width:100%;border:1px solid #E7E2D6;background:#fff;border-radius:6px;padding:.7rem .9rem;font-size:.875rem;color:#2E3A2F}
+    .campo:focus{outline:2px solid #BF5A30;outline-offset:1px;border-color:#BF5A30}
+
+    /* Revelação: o estado escondido só existe sob .anima, ligada pelo script
+       do <head>. Se o JS falhar, a página nasce inteira visível. */
+    .anima .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+    .anima .reveal.in{opacity:1;transform:none}
+
+    ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#FBF9F2}::-webkit-scrollbar-thumb{background:#D9D2BF;border-radius:4px}::-webkit-scrollbar-thumb:hover{background:#8B9A75}
+    @media (prefers-reduced-motion:reduce){
+      .reveal{opacity:1!important;transform:none!important}
+      .marquee-track{animation:none}
+      /* A profundidade fica; o que sai e o movimento. */
+      *{animation-duration:.01ms!important;transition:none!important}
+      .premium-card:hover,.btn-3d:hover,.btn-oco:hover,.marquee figure:hover,.svc-ic{transform:none!important}
+    }
