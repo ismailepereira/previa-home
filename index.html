@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ismaile Pereira · Sites, lojas, sistemas e campanhas</title>
+  <meta name="description" content="Construo sites, lojas online, sistemas sob medida e campanhas no Meta e no Google. Nove projetos publicados em quatro estados. Agende seu orçamento pelo WhatsApp.">
+  <meta name="author" content="Ismaile Pereira">
+  <meta name="robots" content="noindex, nofollow">
+  
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Ismaile Pereira · Presença Digital">
+  <meta property="og:title" content="Ismaile Pereira · Sites, lojas, sistemas e campanhas">
+  <meta property="og:description" content="Do primeiro rascunho ao site no ar. Agende seu orçamento pelo WhatsApp.">
+  <meta property="og:url" content="https://ismailepereira.com.br/">
+  <meta property="og:image" content="https://ismailepereira.com.br/src/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23FBF9F2'/%3E%3Cpath d='M30 62 a20 20 0 0 1 40 0 z' fill='%23BF5A30'/%3E%3Crect x='22' y='70' width='56' height='4' rx='2' fill='%232E3A2F'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2/dist/iconify-icon.min.js"></script>
+  <script>
+    tailwind.config={theme:{extend:{
+      fontFamily:{sans:['"Plus Jakarta Sans"','Inter','sans-serif'],mono:['"JetBrains Mono"','monospace']},
+      colors:{canvas:'#FBF9F2',surface:'#FFFFFF',ink:'#2E3A2F',body:'#4A5A45',subtle:'#8B9A75',line:'#E7E2D6',
+        terra:{DEFAULT:'#BF5A30',dark:'#A24A26',light:'#D4774F'},forest:'#2E3A2F',sage:'#8B9A75'},
+      letterSpacing:{tight:'-0.02em',tighter:'-0.04em'}
+    }}}
+  </script>
+  <style>
+    html{scroll-behavior:smooth;scroll-padding-top:80px}
+    body{margin:0;background:#FBF9F2;color:#2E3A2F;font-family:'Plus Jakarta Sans','Inter',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+    .technical-grid{background-size:40px 40px;background-image:linear-gradient(to right,rgba(46,58,47,.045) 1px,transparent 1px),linear-gradient(to bottom,rgba(46,58,47,.045) 1px,transparent 1px);-webkit-mask-image:linear-gradient(to bottom,black 30%,transparent 100%);mask-image:linear-gradient(to bottom,black 30%,transparent 100%)}
+    .premium-card{background:#fff;border:1px solid #E7E2D6;box-shadow:0 2px 4px rgba(46,58,47,.02),0 8px 16px -4px rgba(46,58,47,.05);transition:all .3s cubic-bezier(.2,.8,.2,1)}
+    .premium-card:hover{transform:translateY(-2px);box-shadow:0 4px 8px rgba(46,58,47,.03),0 14px 28px -6px rgba(46,58,47,.09);border-color:#D9D2BF}
+    @keyframes shimmer{100%{transform:translateX(100%)}}
+    .shimmer-layer{transform:translateX(-100%)}
+    .group:hover .shimmer-layer{animation:shimmer 1.5s cubic-bezier(.4,0,.2,1) infinite}
+    .mono{font-family:'JetBrains Mono',monospace}
+    .gradient-text{background:linear-gradient(120deg,#BF5A30,#D4774F);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+    /* Cabeça de seção: eyebrow + título de dois tempos à esquerda, lede
+       alinhada embaixo à direita. Mesma peça em todas as seções. */
+    .section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:clamp(1.5rem,4vw,4rem);align-items:end;margin-bottom:clamp(2.5rem,5vw,4rem)}
+    @media (max-width:860px){.section-head{grid-template-columns:1fr;align-items:start;gap:1rem}}
+    .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:#BF5A30;margin:0 0 .9rem}
+    .eyebrow::before{content:"";width:22px;height:1px;background:#BF5A30}
+    .h-section{font-size:clamp(1.85rem,4.2vw,3.1rem);font-weight:800;letter-spacing:-.04em;line-height:1.04;margin:0;color:#2E3A2F}
+    .lede{font-size:1rem;line-height:1.7;color:#4A5A45;margin:0;max-width:46ch}
+
+    /* Faixa de capturas correndo */
+    .marquee{--gap:10px;display:flex;gap:var(--gap);overflow:hidden;border-block:1px solid #E7E2D6;background:#fff;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+    .marquee-track{display:flex;gap:var(--gap);flex:none;animation:desliza 62s linear infinite}
+    .marquee:hover .marquee-track{animation-play-state:paused}
+    @keyframes desliza{to{transform:translateX(calc(-100% - var(--gap)))}}
+    .marquee figure{margin:0;flex:none;width:clamp(210px,23vw,320px);aspect-ratio:4/3;overflow:hidden}
+    .marquee img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:saturate(.88);transition:filter .6s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+    .marquee figure:hover img{filter:none;transform:scale(1.04)}
+
+    /* Faixa de números */
+    .stats{border-block:1px solid #E7E2D6;background:#fff}
+    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .stat{padding:clamp(1.6rem,3.4vw,2.8rem) clamp(.75rem,2vw,2rem);text-align:center;border-left:1px solid #E7E2D6}
+    .stat:first-child{border-left:0}
+    .stat-num{display:block;font-size:clamp(2rem,4.6vw,3.4rem);font-weight:800;letter-spacing:-.04em;line-height:1;color:#2E3A2F}
+    .stat-num span{font-size:.42em;color:#8B9A75;letter-spacing:0}
+    .stat-label{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#8B9A75;margin-top:.6rem}
+    @media (max-width:720px){.stats-grid{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3){border-left:0}.stat:nth-child(n+3){border-top:1px solid #E7E2D6}}
+
+    /* Faixa de citação */
+    .quote-band{background:#fff;border-block:1px solid #E7E2D6}
+    .quote-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.62fr);gap:clamp(2rem,6vw,5rem);align-items:center}
+    @media (max-width:860px){.quote-inner{grid-template-columns:1fr}}
+    .quote-band blockquote{margin:0;font-size:clamp(1.4rem,3.2vw,2.3rem);font-weight:800;letter-spacing:-.03em;line-height:1.18;color:#2E3A2F}
+    .quote-band cite{display:block;margin-top:1.2rem;font-family:'JetBrains Mono',monospace;font-size:11px;font-style:normal;text-transform:uppercase;letter-spacing:.16em;color:#8B9A75}
+
+    /* Lista chave/valor */
+    .info-list{list-style:none;margin:2rem 0 0;padding:0}
+    .info-list li{display:grid;grid-template-columns:130px 1fr;gap:1rem;padding:1rem 0;border-top:1px solid #E7E2D6}
+    .info-k{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#8B9A75;padding-top:.25rem}
+    .info-v{font-size:.95rem;color:#2E3A2F;font-weight:600}
+    .info-v small{display:block;font-weight:400;font-size:.85rem;color:#4A5A45;margin-top:.2rem}
+    @media (max-width:560px){.info-list li{grid-template-columns:1fr;gap:.25rem}}
+
+    /* Faixa de fechamento */
+    .cta-band{position:relative;isolation:isolate;background:#2E3A2F;overflow:hidden;text-align:center}
+    .cta-band .cta-bg{position:absolute;inset:0;z-index:-1;opacity:.13}
+    .cta-band .cta-bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(.4)}
+    .cta-band::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(70% 60% at 50% 40%,rgba(191,90,48,.26),transparent 70%)}
+
+    /* Fichas do agendamento */
+    .ficha{border:1px solid #E7E2D6;background:#fff;color:#4A5A45;transition:all .2s cubic-bezier(.2,.8,.2,1);cursor:pointer}
+    .ficha:hover{border-color:#BF5A30;color:#2E3A2F}
+    .ficha[aria-pressed="true"]{background:#BF5A30;border-color:#BF5A30;color:#fff}
+    .ficha:focus-visible{outline:2px solid #BF5A30;outline-offset:2px}
+    .campo{width:100%;border:1px solid #E7E2D6;background:#fff;border-radius:6px;padding:.7rem .9rem;font-size:.875rem;color:#2E3A2F}
+    .campo:focus{outline:2px solid #BF5A30;outline-offset:1px;border-color:#BF5A30}
+
+    /* Revelação: o estado escondido só existe sob .anima, ligada pelo script
+       do <head>. Se o JS falhar, a página nasce inteira visível. */
+    .anima .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+    .anima .reveal.in{opacity:1;transform:none}
+
+    ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#FBF9F2}::-webkit-scrollbar-thumb{background:#D9D2BF;border-radius:4px}::-webkit-scrollbar-thumb:hover{background:#8B9A75}
+    @media (prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important;transition:none!important}.marquee-track{animation:none}*{animation-duration:.01ms!important}}
+  </style>
+  <script>
+    /* Liga a revelação antes da primeira pintura, só onde ela funciona. */
+    if ('IntersectionObserver' in window &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('anima');
+    }
+  </script>
+</head>
+<body class="w-full relative bg-canvas">
+
+  <div class="fixed inset-0 z-0 technical-grid pointer-events-none"></div>
+  <div class="fixed inset-0 z-0 pointer-events-none" style="background:radial-gradient(60% 50% at 70% 0%,rgba(191,90,48,.05),transparent 70%)"></div>
+
+  <!-- ═══════════════════════════════════════════════════ NAVEGAÇÃO ═══ -->
+  <header id="nav-header" class="fixed top-0 left-0 right-0 z-50 w-full px-5 py-4 md:px-10 flex justify-between items-center bg-canvas/85 backdrop-blur-md border-b border-line/70 transition-all duration-300">
+    <a href="#topo" class="flex items-center gap-2.5" aria-label="Ismaile Pereira, início">
+      <img src="src/img/logo.png" alt="" class="w-8 h-8 rounded object-contain">
+      <span class="leading-none">
+        <span class="font-sans text-sm font-extrabold tracking-tight text-ink block">Ismaile Pereira</span>
+        <span class="mono text-[9px] font-medium tracking-[.15em] text-terra uppercase">Presença Digital</span>
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7" aria-label="Navegação principal">
+      <a class="font-sans text-xs font-medium text-subtle hover:text-ink transition-colors" href="#servicos">Serviços</a>
+      <a class="font-sans text-xs font-medium text-subtle hover:text-ink transition-colors" href="#entrega">O que entrego</a>
+      <a class="font-sans text-xs font-medium text-subtle hover:text-ink transition-colors" href="#projetos">Projetos</a>
+      <a class="font-sans text-xs font-medium text-subtle hover:text-ink transition-colors" href="#como-funciona">Como funciona</a>
+      <a class="font-sans text-xs font-medium text-subtle hover:text-ink transition-colors" href="https://ismailepereira.com.br/blog.html">Blog</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="#agendar" class="group relative isolate overflow-hidden bg-terra text-white text-xs font-semibold px-4 py-2 rounded shadow-sm ring-1 ring-white/10 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+        <span class="shimmer-layer absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent z-10"></span>
+        <span class="relative z-20 inline-flex items-center gap-1.5"><iconify-icon icon="solar:calendar-add-linear" width="14"></iconify-icon> Agendar orçamento</span>
+      </a>
+      <button id="navToggle" class="md:hidden p-1.5 text-ink" aria-label="Abrir menu" aria-expanded="false"><iconify-icon icon="solar:hamburger-menu-linear" width="22"></iconify-icon></button>
+    </div>
+  </header>
+  <div id="mobileMenu" class="hidden fixed top-[57px] left-0 right-0 z-40 bg-canvas border-b border-line px-5 py-3 md:hidden">
+    <a href="#servicos" class="block py-2.5 text-sm text-body hover:text-terra">Serviços</a>
+    <a href="#entrega" class="block py-2.5 text-sm text-body hover:text-terra">O que entrego</a>
+    <a href="#projetos" class="block py-2.5 text-sm text-body hover:text-terra">Projetos</a>
+    <a href="#como-funciona" class="block py-2.5 text-sm text-body hover:text-terra">Como funciona</a>
+    <a href="#agendar" class="block py-2.5 text-sm text-body hover:text-terra">Agendar orçamento</a>
+    <a href="https://ismailepereira.com.br/blog.html" class="block py-2.5 text-sm text-body hover:text-terra">Blog</a>
+  </div>
+
+  <div class="relative z-10">
+
+    <!-- ═══════════════════════════════════════════ FAIXA DE PROJETOS ═══ -->
+  <div class="pt-[68px]">
+    <!-- AUTO:marquee -->
+  <section class="marquee" aria-label="Capturas dos projetos publicados">
+    <div class="marquee-track">
+      <figure><img src="src/img/proj/postos-savana.webp" alt="Site Auto Postos Savana, captura de tela" width="1080" height="810" loading="lazy" decoding="async"></figure>
+      <figure><img src="src/img/proj/jessica-machado.webp" alt="Site Jéssica Machado, captura de tela" width="1080" height="810" loading="lazy" decoding="async"></figure>
+      <figure><img src="src/img/proj/casa-do-boi.webp" alt="Site Casa do Boi FOS, captura de tela" width="1080" height="810" loading="lazy" decoding="async"></figure>
+      <figure><img src="src/img/proj/recanto-hf.webp" alt="Site Recanto HF, captura de tela" width="1080" height="810" loading="lazy" decoding="async"></figure>
+      <figure><img src="src/img/proj/quintal-pizzaria.webp" alt="Site Quintal Pizzaria, captura de tela" width="1080" height="810" loading="lazy" decoding="async"></figure>
+      <figure><img src="src/img/proj/alysson-mattos.webp" alt="Site Alysson Mattos, captura de tela" width="1080" height="810" loading="lazy" decoding="async"></figure>
+      <figure><img src="src/img/proj/lilian-coelho.webp" alt="Site Lilian Coelho, captura de tela" width="1080" height="810" loading="lazy" decoding="async"></figure>
+      <figure><img src="src/img/proj/la-cred.webp" alt="Site L.A CRED, captura de tela" width="1080" height="810" loading="lazy" decoding="async"></figure>
+      <figure><img src="src/img/proj/clinica-da-familia.webp" alt="Site Clínica da Família, captura de tela" width="1080" height="810" loading="lazy" decoding="async"></figure>
+    </div>
+    <div class="marquee-track" aria-hidden="true">
+      <figure><img src="src/img/proj/postos-savana.webp" alt="" width="1080" height="810" loading="lazy" decoding="async"></figure>
+      <figure><img src="src/img/proj/jessica-machado.webp" alt="" width="1080" height="810" loading="lazy" decoding="async"></figure>
+      <figure><img src="src/img/proj/casa-do-boi.webp" alt="" width="1080" height="810" loading="lazy" decoding="async"></figure>
+      <figure><img src="src/img/proj/recanto-hf.webp" alt="" width="1080" height="810" loading="lazy" decoding="async"></figure>
+      <figure><img src="src/img/proj/quintal-pizzaria.webp" alt="" width="1080" height="810" loading="lazy" decoding="async"></figure>
+      <figure><img src="src/img/proj/alysson-mattos.webp" alt="" width="1080" height="810" loading="lazy" decoding="async"></figure>
+      <figure><img src="src/img/proj/lilian-coelho.webp" alt="" width="1080" height="810" loading="lazy" decoding="async"></figure>
+      <figure><img src="src/img/proj/la-cred.webp" alt="" width="1080" height="810" loading="lazy" decoding="async"></figure>
+      <figure><img src="src/img/proj/clinica-da-familia.webp" alt="" width="1080" height="810" loading="lazy" decoding="async"></figure>
+    </div>
+  </section>
+    <!-- /AUTO:marquee -->
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════ HERO ═══ -->
+  <header class="relative flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 lg:px-20 pt-14 md:pt-16 pb-16 gap-14 max-w-7xl mx-auto" id="topo">
+    <div class="max-w-2xl space-y-7 relative z-10">
+      <p class="eyebrow">Sites · Lojas · Sistemas · Campanhas</p>
+
+      <h1 class="font-sans text-5xl md:text-7xl font-extrabold tracking-tighter text-ink leading-[0.98]">
+        Do primeiro rascunho<br>
+        <span class="gradient-text">ao site no ar.</span>
+      </h1>
+
+      <p class="max-w-lg font-sans text-base text-body leading-relaxed">
+        Eu desenho, programo e publico. Domínio, hospedagem, e-mail e as medições ficam configurados por mim — e quando você quiser, também <strong class="text-ink font-semibold">cuido das campanhas e das redes</strong> depois que o site sobe.
+      </p>
+
+      <div class="flex flex-wrap gap-3">
+        <a href="#agendar" class="group relative isolate overflow-hidden bg-terra text-white px-6 py-3 rounded text-sm font-semibold shadow-lg shadow-terra/20 ring-1 ring-white/10 transition-all duration-300 hover:scale-[1.02]">
+          <span class="shimmer-layer absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent z-10"></span>
+          <span class="relative z-20 inline-flex items-center gap-2">Agendar meu orçamento <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon></span>
+        </a>
+        <a href="#projetos" class="px-6 py-3 rounded text-sm font-semibold text-ink bg-white border border-line hover:border-ink/40 transition-colors">Ver projetos no ar</a>
+      </div>
+
+      <div class="flex items-center gap-2 mono text-[11px] text-subtle uppercase tracking-wider">
+        <iconify-icon icon="solar:map-point-linear" width="14" class="text-terra"></iconify-icon>
+        De Mirante da Serra (RO) para o Brasil inteiro
+      </div>
+    </div>
+
+    <div class="relative w-full max-w-lg">
+      <div class="absolute inset-0 bg-gradient-to-tr from-canvas via-terra/5 to-canvas opacity-60 blur-3xl"></div>
+      <div class="premium-card relative overflow-hidden rounded-xl">
+        <div class="flex items-center gap-2 px-4 h-9 border-b border-line bg-canvas">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#E7E2D6]"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-[#E7E2D6]"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-[#E7E2D6]"></span>
+          <span class="mono text-[10px] text-subtle ml-2 truncate">postossavana.com.br</span>
+        </div>
+        <img src="src/img/proj/postos-savana.webp" width="1080" height="810" alt="Site dos Auto Postos Savana, no ar" class="w-full block">
+      </div>
+      <div class="premium-card absolute -bottom-5 -left-4 md:-left-8 rounded-lg px-4 py-3 max-w-[190px]">
+        <div class="mono text-[9px] uppercase tracking-widest text-subtle">No ar desde</div>
+        <div class="text-sm font-bold text-ink mt-0.5">2026 · Rondônia</div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════════════ NÚMEROS ═════ -->
+  <section class="stats" aria-label="Números do estúdio">
+    <div class="stats-grid max-w-7xl mx-auto">
+      <div class="stat reveal"><span class="stat-num">09</span><span class="stat-label">Projetos publicados</span></div>
+      <div class="stat reveal"><span class="stat-num">04</span><span class="stat-label">Estados atendidos</span></div>
+      <div class="stat reveal"><span class="stat-num">09</span><span class="stat-label">Frentes de serviço</span></div>
+      <div class="stat reveal"><span class="stat-num">24<span>h</span></span><span class="stat-label">Para responder</span></div>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- ═════════════════════════════════════════════════ SERVIÇOS ═══ -->
+    <section id="servicos" class="px-6 md:px-12 lg:px-20 py-20 md:py-24 max-w-7xl mx-auto">
+      <div class="section-head">
+        <div class="reveal">
+          <p class="eyebrow">O que eu faço</p>
+          <h2 class="h-section">Nove frentes,<br>um fornecedor só</h2>
+        </div>
+        <p class="lede reveal">
+          Cada frente funciona sozinha. Quando você contrata mais de uma, é a mesma pessoa que desenha a página, escreve o anúncio e organiza o calendário.
+        </p>
+      </div>
+
+      <!-- AUTO:servicos -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+            <div class="w-10 h-10 rounded-lg bg-terra/10 flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:monitor-smartphone-linear" width="20"></iconify-icon></div>
+            <h3 class="font-sans text-lg font-bold text-ink tracking-tight">Site profissional</h3>
+            <p class="mt-2 text-sm text-body leading-relaxed flex-1">Institucional ou vitrine, montado página por página. Layout próprio, responsivo no celular, SEO on-page configurado e botões de WhatsApp onde faz sentido.</p>
+            <div class="mt-4 pt-4 border-t border-line mono text-[10px] uppercase tracking-wider text-subtle">Clínica · Restaurante · Comércio</div>
+          </article>
+          <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+            <div class="w-10 h-10 rounded-lg bg-terra/10 flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:magnet-wave-linear" width="20"></iconify-icon></div>
+            <h3 class="font-sans text-lg font-bold text-ink tracking-tight">Landing de captação</h3>
+            <p class="mt-2 text-sm text-body leading-relaxed flex-1">Página de uma dobra só, com formulário ligado a um painel de leads. Exportação em planilha, Pixel do Meta e Google Tag instalados e testados.</p>
+            <div class="mt-4 pt-4 border-t border-line mono text-[10px] uppercase tracking-wider text-subtle">Curso · Serviço · Promoção</div>
+          </article>
+          <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+            <div class="w-10 h-10 rounded-lg bg-terra/10 flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:cart-large-2-linear" width="20"></iconify-icon></div>
+            <h3 class="font-sans text-lg font-bold text-ink tracking-tight">Loja online</h3>
+            <p class="mt-2 text-sm text-body leading-relaxed flex-1">Catálogo por categoria, busca, carrinho, meio de pagamento e cálculo de frete. Cadastro de produto feito por você, sem depender de mim.</p>
+            <div class="mt-4 pt-4 border-t border-line mono text-[10px] uppercase tracking-wider text-subtle">Varejo · Agropecuária · Moda</div>
+          </article>
+          <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+            <div class="w-10 h-10 rounded-lg bg-terra/10 flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:calculator-minimalistic-linear" width="20"></iconify-icon></div>
+            <h3 class="font-sans text-lg font-bold text-ink tracking-tight">Sistema de caixa e gestão</h3>
+            <p class="mt-2 text-sm text-body leading-relaxed flex-1">Venda, sangria, fiado, estoque, frota e contas a pagar num painel só. Login por usuário, histórico de alteração, fechamento por período e exportação em planilha.</p>
+            <div class="mt-4 pt-4 border-t border-line mono text-[10px] uppercase tracking-wider text-subtle">Posto · Loja · Distribuidora</div>
+          </article>
+          <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+            <div class="w-10 h-10 rounded-lg bg-terra/10 flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:document-text-linear" width="20"></iconify-icon></div>
+            <h3 class="font-sans text-lg font-bold text-ink tracking-tight">Sistema para advocacia</h3>
+            <p class="mt-2 text-sm text-body leading-relaxed flex-1">Cadastro de cliente e processo, controle de prazo com aviso antecipado, agenda de audiência, documentos anexados ao caso e relatório por advogado.</p>
+            <div class="mt-4 pt-4 border-t border-line mono text-[10px] uppercase tracking-wider text-subtle">Escritório · Advogado autônomo</div>
+          </article>
+          <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+            <div class="w-10 h-10 rounded-lg bg-terra/10 flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:chat-round-dots-linear" width="20"></iconify-icon></div>
+            <h3 class="font-sans text-lg font-bold text-ink tracking-tight">Bots de atendimento</h3>
+            <p class="mt-2 text-sm text-body leading-relaxed flex-1">Robô que responde no WhatsApp, no Instagram e no Messenger. Fluxo montado no ManyChat ou direto na API, com menu, coleta de dados, agendamento e passagem para o humano na hora certa.</p>
+            <div class="mt-4 pt-4 border-t border-line mono text-[10px] uppercase tracking-wider text-subtle">ManyChat · WhatsApp · Instagram</div>
+          </article>
+          <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+            <div class="w-10 h-10 rounded-lg bg-terra/10 flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:bolt-circle-linear" width="20"></iconify-icon></div>
+            <h3 class="font-sans text-lg font-bold text-ink tracking-tight">Automações</h3>
+            <p class="mt-2 text-sm text-body leading-relaxed flex-1">Ligação entre as ferramentas que você já usa: formulário que cai na planilha, pedido que vira mensagem, lembrete que dispara sozinho, relatório que chega pronto. Montado em n8n, Zapier ou direto no código.</p>
+            <div class="mt-4 pt-4 border-t border-line mono text-[10px] uppercase tracking-wider text-subtle">n8n · Zapier · Make</div>
+          </article>
+          <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+            <div class="w-10 h-10 rounded-lg bg-terra/10 flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:calendar-mark-linear" width="20"></iconify-icon></div>
+            <h3 class="font-sans text-lg font-bold text-ink tracking-tight">Presença nas redes</h3>
+            <p class="mt-2 text-sm text-body leading-relaxed flex-1">Calendário editorial do mês, artes no padrão visual da marca, legendas escritas e publicação feita. Você aprova antes de subir.</p>
+            <div class="mt-4 pt-4 border-t border-line mono text-[10px] uppercase tracking-wider text-subtle">Instagram · Facebook · Google</div>
+          </article>
+          <article class="reveal premium-card rounded-xl p-6 flex flex-col">
+            <div class="w-10 h-10 rounded-lg bg-terra/10 flex items-center justify-center text-terra mb-4"><iconify-icon icon="solar:graph-up-linear" width="20"></iconify-icon></div>
+            <h3 class="font-sans text-lg font-bold text-ink tracking-tight">Campanhas no Meta e Google</h3>
+            <p class="mt-2 text-sm text-body leading-relaxed flex-1">Estrutura de campanha montada, públicos definidos, criativos produzidos em variações e acompanhamento semanal com relatório escrito.</p>
+            <div class="mt-4 pt-4 border-t border-line mono text-[10px] uppercase tracking-wider text-subtle">Meta Ads · Google Ads</div>
+          </article>
+          <article class="reveal premium-card rounded-xl p-6 flex flex-col justify-center bg-canvas">
+            <p class="text-sm text-body leading-relaxed">Não achou o seu caso na lista? Descreva no agendamento — se não for comigo, eu digo na primeira conversa.</p>
+            <a href="#agendar" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-terra hover:underline">Agendar orçamento <iconify-icon icon="solar:arrow-right-linear" width="15"></iconify-icon></a>
+          </article>
+        </div>
+      <!-- /AUTO:servicos -->
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ CITAÇÃO ═══ -->
+    <section class="quote-band py-16 md:py-20">
+      <div class="quote-inner px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
+        <div class="reveal">
+          <blockquote>Entrego com domínio, hospedagem, e-mail e medição já configurados. Sem ponta&nbsp;solta.</blockquote>
+          <cite>Ismaile Pereira · Presença Digital</cite>
+        </div>
+        <div class="reveal rounded-xl overflow-hidden border border-line">
+          <img src="src/img/proj/quintal-pizzaria.webp" width="1080" height="810" alt="Site do Quintal Restaurante e Pizzaria" loading="lazy" class="w-full block">
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ ENTREGA ═══ -->
+    <section id="entrega" class="px-6 md:px-12 lg:px-20 py-20 md:py-24 max-w-7xl mx-auto">
+      <div class="section-head">
+        <div class="reveal">
+          <p class="eyebrow">O que entrego</p>
+          <h2 class="h-section">O que vem junto<br>em todo projeto</h2>
+        </div>
+        <p class="lede reveal">
+          Não é lista de extras vendidos à parte. É o que já está incluído em qualquer site ou loja que sai daqui.
+        </p>
+      </div>
+
+      <div class="reveal rounded-2xl bg-forest text-canvas overflow-hidden">
+        <ul class="grid md:grid-cols-3">
+          <li class="p-8 md:p-10 md:border-r" style="border-color:rgba(244,240,230,.14)">
+            <span class="mono text-xs text-terra-light">01</span>
+            <h3 class="font-sans text-lg font-bold text-canvas mt-3">Publicação completa</h3>
+            <p class="text-sm mt-2 leading-relaxed" style="color:rgba(244,240,230,.72)">Registro ou apontamento do domínio, hospedagem contratada, certificado de segurança e e-mail no seu endereço. Você recebe todos os acessos.</p>
+          </li>
+          <li class="p-8 md:p-10 md:border-r border-t md:border-t-0" style="border-color:rgba(244,240,230,.14)">
+            <span class="mono text-xs text-terra-light">02</span>
+            <h3 class="font-sans text-lg font-bold text-canvas mt-3">Medição instalada</h3>
+            <p class="text-sm mt-2 leading-relaxed" style="color:rgba(244,240,230,.72)">Google Analytics, Search Console, Pixel do Meta e Google Tag configurados e testados. Formulário e WhatsApp já marcados como conversão.</p>
+          </li>
+          <li class="p-8 md:p-10 border-t md:border-t-0" style="border-color:rgba(244,240,230,.14)">
+            <span class="mono text-xs text-terra-light">03</span>
+            <h3 class="font-sans text-lg font-bold text-canvas mt-3">Manual e passagem</h3>
+            <p class="text-sm mt-2 leading-relaxed" style="color:rgba(244,240,230,.72)">Vídeo curto mostrando como mexer no que muda, mais o arquivo do projeto. Se um dia trocar de fornecedor, leva tudo com você.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════ PROJETOS ═══ -->
+    <section id="projetos" class="px-6 md:px-12 lg:px-20 py-20 md:py-24 max-w-7xl mx-auto">
+      <div class="section-head">
+        <div class="reveal">
+          <p class="eyebrow">Portfólio</p>
+          <h2 class="h-section">Nove projetos.<br>Todos com link aberto</h2>
+        </div>
+        <p class="lede reveal">
+          Nada de mockup bonito em cima de projeto que nunca subiu. Clique em qualquer um e veja funcionando no seu celular agora.
+        </p>
+      </div>
+
+      <!-- AUTO:projetos -->
+        <div id="grade-projetos" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <a class="reveal premium-card group rounded-xl overflow-hidden flex flex-col" href="https://postossavana.com.br" target="_blank" rel="noopener">
+            <div class="relative aspect-[4/3] overflow-hidden bg-canvas border-b border-line">
+              <img src="src/img/proj/postos-savana.webp" width="1080" height="810" loading="lazy" decoding="async" alt="Site Auto Postos Savana, captura de tela" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]">
+              <div class="absolute top-3 left-3"><span class="mono text-[9px] uppercase tracking-widest px-2 py-1 rounded bg-terra text-white">no ar</span></div>
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <div class="flex items-baseline justify-between gap-3">
+                <h3 class="font-sans text-base font-bold text-ink tracking-tight">Auto Postos Savana</h3>
+                <span class="mono text-[9px] uppercase tracking-wider text-subtle shrink-0">Site institucional</span>
+              </div>
+              <p class="text-sm text-body mt-2 leading-relaxed flex-1">Duas unidades 24h na BR-364, operando desde 1998. Site institucional com as duas bandeiras, serviços e localização.</p>
+              <div class="mt-4 pt-3 border-t border-line flex items-center justify-between gap-2">
+                <span class="mono text-[10px] uppercase tracking-wider text-subtle">Ouro Preto do Oeste · RO</span>
+                <span class="mono text-[10px] text-terra group-hover:underline truncate">postossavana.com.br →</span>
+              </div>
+            </div>
+          </a>
+          <a class="reveal premium-card group rounded-xl overflow-hidden flex flex-col" href="https://psijessicamachado.com.br" target="_blank" rel="noopener">
+            <div class="relative aspect-[4/3] overflow-hidden bg-canvas border-b border-line">
+              <img src="src/img/proj/jessica-machado.webp" width="1080" height="810" loading="lazy" decoding="async" alt="Site Jéssica Machado, captura de tela" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]">
+              <div class="absolute top-3 left-3"><span class="mono text-[9px] uppercase tracking-widest px-2 py-1 rounded bg-terra text-white">no ar</span></div>
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <div class="flex items-baseline justify-between gap-3">
+                <h3 class="font-sans text-base font-bold text-ink tracking-tight">Jéssica Machado</h3>
+                <span class="mono text-[9px] uppercase tracking-wider text-subtle shrink-0">Site institucional</span>
+              </div>
+              <p class="text-sm text-body mt-2 leading-relaxed flex-1">Neuropsicologia infantil e apoio a mulheres. Site com agendamento pelo WhatsApp e conteúdo por CMS.</p>
+              <div class="mt-4 pt-3 border-t border-line flex items-center justify-between gap-2">
+                <span class="mono text-[10px] uppercase tracking-wider text-subtle">Rondônia</span>
+                <span class="mono text-[10px] text-terra group-hover:underline truncate">psijessicamachado.com.br →</span>
+              </div>
+            </div>
+          </a>
+          <a class="reveal premium-card group rounded-xl overflow-hidden flex flex-col" href="https://casa-do-boi.vercel.app" target="_blank" rel="noopener">
+            <div class="relative aspect-[4/3] overflow-hidden bg-canvas border-b border-line">
+              <img src="src/img/proj/casa-do-boi.webp" width="1080" height="810" loading="lazy" decoding="async" alt="Site Casa do Boi FOS, captura de tela" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]">
+              <div class="absolute top-3 left-3"><span class="mono text-[9px] uppercase tracking-widest px-2 py-1 rounded bg-forest/85 text-canvas">demonstração</span></div>
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <div class="flex items-baseline justify-between gap-3">
+                <h3 class="font-sans text-base font-bold text-ink tracking-tight">Casa do Boi FOS</h3>
+                <span class="mono text-[9px] uppercase tracking-wider text-subtle shrink-0">E-commerce</span>
+              </div>
+              <p class="text-sm text-body mt-2 leading-relaxed flex-1">E-commerce de agropecuária em Next.js 15 com catálogo por categoria e busca. Checkout na próxima fase.</p>
+              <div class="mt-4 pt-3 border-t border-line flex items-center justify-between gap-2">
+                <span class="mono text-[10px] uppercase tracking-wider text-subtle">Demonstração</span>
+                <span class="mono text-[10px] text-terra group-hover:underline truncate">casa-do-boi.vercel.app →</span>
+              </div>
+            </div>
+          </a>
+          <a class="reveal premium-card group rounded-xl overflow-hidden flex flex-col" href="https://ismailepereira.github.io/recanto-hf/" target="_blank" rel="noopener">
+            <div class="relative aspect-[4/3] overflow-hidden bg-canvas border-b border-line">
+              <img src="src/img/proj/recanto-hf.webp" width="1080" height="810" loading="lazy" decoding="async" alt="Site Recanto HF, captura de tela" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]">
+              <div class="absolute top-3 left-3"><span class="mono text-[9px] uppercase tracking-widest px-2 py-1 rounded bg-terra text-white">no ar</span></div>
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <div class="flex items-baseline justify-between gap-3">
+                <h3 class="font-sans text-base font-bold text-ink tracking-tight">Recanto HF</h3>
+                <span class="mono text-[9px] uppercase tracking-wider text-subtle shrink-0">Site institucional</span>
+              </div>
+              <p class="text-sm text-body mt-2 leading-relaxed flex-1">Gastrobar e cafeteria. Página única com cardápio completo, horários e rota até a casa.</p>
+              <div class="mt-4 pt-3 border-t border-line flex items-center justify-between gap-2">
+                <span class="mono text-[10px] uppercase tracking-wider text-subtle">Anapu · PA</span>
+                <span class="mono text-[10px] text-terra group-hover:underline truncate">recanto-hf →</span>
+              </div>
+            </div>
+          </a>
+          <a class="reveal premium-card group rounded-xl overflow-hidden flex flex-col" href="https://ismailepereira.github.io/quintal-pizzaria/" target="_blank" rel="noopener">
+            <div class="relative aspect-[4/3] overflow-hidden bg-canvas border-b border-line">
+              <img src="src/img/proj/quintal-pizzaria.webp" width="1080" height="810" loading="lazy" decoding="async" alt="Site Quintal Pizzaria, captura de tela" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]">
+              <div class="absolute top-3 left-3"><span class="mono text-[9px] uppercase tracking-widest px-2 py-1 rounded bg-terra text-white">no ar</span></div>
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <div class="flex items-baseline justify-between gap-3">
+                <h3 class="font-sans text-base font-bold text-ink tracking-tight">Quintal Pizzaria</h3>
+                <span class="mono text-[9px] uppercase tracking-wider text-subtle shrink-0">Site institucional</span>
+              </div>
+              <p class="text-sm text-body mt-2 leading-relaxed flex-1">Restaurante e pizzaria. Vitrine escura, cinematográfica, com cardápio e pedido direto no WhatsApp.</p>
+              <div class="mt-4 pt-3 border-t border-line flex items-center justify-between gap-2">
+                <span class="mono text-[10px] uppercase tracking-wider text-subtle">Ouro Preto do Oeste · RO</span>
+                <span class="mono text-[10px] text-terra group-hover:underline truncate">quintal-pizzaria →</span>
+              </div>
+            </div>
+          </a>
+          <a class="reveal premium-card group rounded-xl overflow-hidden flex flex-col" href="https://ismailepereira.github.io/alysson-mattos-site/" target="_blank" rel="noopener">
+            <div class="relative aspect-[4/3] overflow-hidden bg-canvas border-b border-line">
+              <img src="src/img/proj/alysson-mattos.webp" width="1080" height="810" loading="lazy" decoding="async" alt="Site Alysson Mattos, captura de tela" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]">
+              <div class="absolute top-3 left-3"><span class="mono text-[9px] uppercase tracking-widest px-2 py-1 rounded bg-terra text-white">no ar</span></div>
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <div class="flex items-baseline justify-between gap-3">
+                <h3 class="font-sans text-base font-bold text-ink tracking-tight">Alysson Mattos</h3>
+                <span class="mono text-[9px] uppercase tracking-wider text-subtle shrink-0">Site institucional</span>
+              </div>
+              <p class="text-sm text-body mt-2 leading-relaxed flex-1">Fisioterapeuta. Site com especialidades, convênios e agendamento pelo WhatsApp.</p>
+              <div class="mt-4 pt-3 border-t border-line flex items-center justify-between gap-2">
+                <span class="mono text-[10px] uppercase tracking-wider text-subtle">Tangará da Serra · MT</span>
+                <span class="mono text-[10px] text-terra group-hover:underline truncate">alysson-mattos-site →</span>
+              </div>
+            </div>
+          </a>
+          <a class="reveal premium-card group rounded-xl overflow-hidden flex flex-col" href="https://ismailepereira.github.io/lilian-coelho-site/" target="_blank" rel="noopener">
+            <div class="relative aspect-[4/3] overflow-hidden bg-canvas border-b border-line">
+              <img src="src/img/proj/lilian-coelho.webp" width="1080" height="810" loading="lazy" decoding="async" alt="Site Lilian Coelho, captura de tela" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]">
+              <div class="absolute top-3 left-3"><span class="mono text-[9px] uppercase tracking-widest px-2 py-1 rounded bg-terra text-white">no ar</span></div>
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <div class="flex items-baseline justify-between gap-3">
+                <h3 class="font-sans text-base font-bold text-ink tracking-tight">Lilian Coelho</h3>
+                <span class="mono text-[9px] uppercase tracking-wider text-subtle shrink-0">Site + landing</span>
+              </div>
+              <p class="text-sm text-body mt-2 leading-relaxed flex-1">Psicóloga gestáltica. Site institucional mais uma landing dedicada à terapia para mulheres.</p>
+              <div class="mt-4 pt-3 border-t border-line flex items-center justify-between gap-2">
+                <span class="mono text-[10px] uppercase tracking-wider text-subtle">Rio de Janeiro · RJ</span>
+                <span class="mono text-[10px] text-terra group-hover:underline truncate">lilian-coelho-site →</span>
+              </div>
+            </div>
+          </a>
+          <a class="reveal premium-card group rounded-xl overflow-hidden flex flex-col" href="https://ismailepereira.github.io/la-cred-site/" target="_blank" rel="noopener">
+            <div class="relative aspect-[4/3] overflow-hidden bg-canvas border-b border-line">
+              <img src="src/img/proj/la-cred.webp" width="1080" height="810" loading="lazy" decoding="async" alt="Site L.A CRED, captura de tela" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]">
+              <div class="absolute top-3 left-3"><span class="mono text-[9px] uppercase tracking-widest px-2 py-1 rounded bg-terra text-white">no ar</span></div>
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <div class="flex items-baseline justify-between gap-3">
+                <h3 class="font-sans text-base font-bold text-ink tracking-tight">L.A CRED</h3>
+                <span class="mono text-[9px] uppercase tracking-wider text-subtle shrink-0">Site institucional</span>
+              </div>
+              <p class="text-sm text-body mt-2 leading-relaxed flex-1">Crédito consignado. Site institucional com simulação e contato direto com o consultor.</p>
+              <div class="mt-4 pt-3 border-t border-line flex items-center justify-between gap-2">
+                <span class="mono text-[10px] uppercase tracking-wider text-subtle">Rondônia</span>
+                <span class="mono text-[10px] text-terra group-hover:underline truncate">la-cred-site →</span>
+              </div>
+            </div>
+          </a>
+          <a class="reveal premium-card group rounded-xl overflow-hidden flex flex-col" href="https://ismailepereira.github.io/clinica-da-familia/" target="_blank" rel="noopener">
+            <div class="relative aspect-[4/3] overflow-hidden bg-canvas border-b border-line">
+              <img src="src/img/proj/clinica-da-familia.webp" width="1080" height="810" loading="lazy" decoding="async" alt="Site Clínica da Família, captura de tela" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]">
+              <div class="absolute top-3 left-3"><span class="mono text-[9px] uppercase tracking-widest px-2 py-1 rounded bg-forest/85 text-canvas">demonstração</span></div>
+            </div>
+            <div class="p-5 flex flex-col flex-1">
+              <div class="flex items-baseline justify-between gap-3">
+                <h3 class="font-sans text-base font-bold text-ink tracking-tight">Clínica da Família</h3>
+                <span class="mono text-[9px] uppercase tracking-wider text-subtle shrink-0">Landing de captação</span>
+              </div>
+              <p class="text-sm text-body mt-2 leading-relaxed flex-1">Landing de captação de pacientes: especialidades, prova social e formulário ligado ao painel de leads.</p>
+              <div class="mt-4 pt-3 border-t border-line flex items-center justify-between gap-2">
+                <span class="mono text-[10px] uppercase tracking-wider text-subtle">Demonstração</span>
+                <span class="mono text-[10px] text-terra group-hover:underline truncate">clinica-da-familia →</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      <!-- /AUTO:projetos -->
+    </section>
+
+    <!-- ═══════════════════════════════════════════ COMO FUNCIONA ═════ -->
+    <section id="como-funciona" class="px-6 md:px-12 lg:px-20 py-20 md:py-24 max-w-7xl mx-auto">
+      <div class="section-head">
+        <div class="reveal">
+          <p class="eyebrow">Como funciona</p>
+          <h2 class="h-section">Você sabe onde está<br>em cada semana</h2>
+        </div>
+        <p class="lede reveal">
+          Quatro etapas, sem mistério. Você acompanha por link real desde o primeiro dia — não por print no WhatsApp.
+        </p>
+      </div>
+
+      <ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <li class="reveal premium-card rounded-xl p-6">
+          <div class="mono text-[11px] text-terra tracking-widest">01</div>
+          <h3 class="font-sans text-base font-bold text-ink mt-3">Conversa</h3>
+          <p class="text-sm text-body mt-2 leading-relaxed">Vinte minutos no WhatsApp ou na chamada, pra eu entender o que o seu negócio faz e o que precisa aparecer no site.</p>
+        </li>
+        <li class="reveal premium-card rounded-xl p-6">
+          <div class="mono text-[11px] text-terra tracking-widest">02</div>
+          <h3 class="font-sans text-base font-bold text-ink mt-3">Proposta</h3>
+          <p class="text-sm text-body mt-2 leading-relaxed">Escopo, prazo e preço por escrito. O que está incluído e o que não está — pra não ter conversa difícil no meio do caminho.</p>
+        </li>
+        <li class="reveal premium-card rounded-xl p-6">
+          <div class="mono text-[11px] text-terra tracking-widest">03</div>
+          <h3 class="font-sans text-base font-bold text-ink mt-3">Construção</h3>
+          <p class="text-sm text-body mt-2 leading-relaxed">Você acompanha por um link real, não por print. Ajuste é feito enquanto está barato: antes de subir.</p>
+        </li>
+        <li class="reveal premium-card rounded-xl p-6">
+          <div class="mono text-[11px] text-terra tracking-widest">04</div>
+          <h3 class="font-sans text-base font-bold text-ink mt-3">No ar</h3>
+          <p class="text-sm text-body mt-2 leading-relaxed">Publico, entrego os acessos e gravo o vídeo do manual. Se contratou campanha ou redes, o acompanhamento começa aqui.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════ AGENDAR ═══ -->
+    <section id="agendar" class="px-6 md:px-12 lg:px-20 py-20 md:py-24">
+      <div class="max-w-5xl mx-auto reveal">
+        <div class="premium-card rounded-2xl overflow-hidden">
+          <div class="px-6 md:px-10 pt-8 md:pt-10 pb-6 border-b border-line">
+            <p class="eyebrow">Agendamento</p>
+            <h2 class="h-section">Escolha o melhor dia.<br>Eu confirmo no WhatsApp</h2>
+            <p class="lede mt-4 max-w-2xl">
+              Sem formulário longo e sem esperar retorno de e-mail. Marque o serviço, o dia e o turno — o botão monta a mensagem e abre o seu WhatsApp com tudo escrito.
+            </p>
+          </div>
+
+          <form id="form-agendar" class="px-6 md:px-10 py-8 space-y-8" novalidate>
+
+            <fieldset>
+              <legend class="mono text-[11px] uppercase tracking-[.16em] text-subtle mb-3">01 · Sobre o que a gente conversa</legend>
+              <div id="fichas-servico" class="flex flex-wrap gap-2"></div>
+            </fieldset>
+
+            <fieldset>
+              <legend class="mono text-[11px] uppercase tracking-[.16em] text-subtle mb-3">02 · Melhor dia</legend>
+              <div id="fichas-dia" class="flex flex-wrap gap-2"></div>
+              <p class="mt-2 text-xs text-subtle">Só dias úteis. Se nenhum servir, me chame direto no WhatsApp.</p>
+            </fieldset>
+
+            <fieldset>
+              <legend class="mono text-[11px] uppercase tracking-[.16em] text-subtle mb-3">03 · Turno</legend>
+              <div id="fichas-turno" class="flex flex-wrap gap-2"></div>
+            </fieldset>
+
+            <fieldset>
+              <legend class="mono text-[11px] uppercase tracking-[.16em] text-subtle mb-3">04 · Quem é você</legend>
+              <div class="grid sm:grid-cols-3 gap-3">
+                <label class="block"><span class="sr-only">Seu nome</span>
+                  <input class="campo" type="text" id="ag-nome" name="nome" placeholder="Seu nome" autocomplete="name" required></label>
+                <label class="block"><span class="sr-only">Seu negócio</span>
+                  <input class="campo" type="text" id="ag-negocio" name="negocio" placeholder="Seu negócio" autocomplete="organization"></label>
+                <label class="block"><span class="sr-only">Cidade</span>
+                  <input class="campo" type="text" id="ag-cidade" name="cidade" placeholder="Cidade" autocomplete="address-level2"></label>
+              </div>
+              <label class="block mt-3"><span class="sr-only">O que você precisa</span>
+                <textarea class="campo" id="ag-recado" name="recado" rows="3" placeholder="Em duas linhas: o que o seu negócio faz e o que você precisa que o site tenha. (opcional)"></textarea></label>
+            </fieldset>
+
+            <div class="pt-2 border-t border-line flex flex-col md:flex-row md:items-center gap-4 justify-between">
+              <p id="ag-resumo" class="text-sm text-body flex-1" role="status" aria-live="polite">Escolha o serviço, o dia e o turno acima.</p>
+              <button type="submit" id="ag-enviar" class="group relative isolate overflow-hidden bg-terra text-white px-6 py-3 rounded text-sm font-semibold shadow-lg shadow-terra/20 ring-1 ring-white/10 transition-all duration-300 hover:scale-[1.02] disabled:opacity-40 disabled:hover:scale-100 disabled:shadow-none shrink-0">
+                <span class="shimmer-layer absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent z-10"></span>
+                <span class="relative z-20 inline-flex items-center gap-2"><iconify-icon icon="solar:chat-round-line-linear" width="16"></iconify-icon> Enviar no WhatsApp</span>
+              </button>
+            </div>
+
+            <p class="text-xs text-subtle">
+              Prefere e-mail? <a class="text-terra hover:underline" href="mailto:ismailepereiramachado@gmail.com?subject=Or%C3%A7amento">ismailepereiramachado@gmail.com</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════════════════════════════════════════════════ SOBRE ═══ -->
+    <section id="sobre" class="px-6 md:px-12 lg:px-20 py-20 md:py-24 max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+        <div class="reveal">
+          <p class="eyebrow">Quem faz</p>
+          <h2 class="h-section">Sou eu quem atende,<br>e sou eu quem faz</h2>
+          <p class="lede mt-5">
+            Não tem equipe de vendas te prometendo uma coisa e time de execução entregando outra. Você fala comigo do orçamento até a entrega dos acessos.
+          </p>
+
+          <ul class="info-list">
+            <li>
+              <span class="info-k">Base</span>
+              <span class="info-v">Mirante da Serra · Rondônia
+                <small>Atendimento 100% online, para o Brasil inteiro</small>
+              </span>
+            </li>
+            <li>
+              <span class="info-k">Onde já rodo</span>
+              <span class="info-v">RO · MT · PA · RJ
+                <small>Posto, pizzaria, agropecuária, clínica, advocacia, varejo</small>
+              </span>
+            </li>
+            <li>
+              <span class="info-k">Contato</span>
+              <span class="info-v">
+                <a class="hover:text-terra transition-colors" href="https://wa.me/5569999688625" target="_blank" rel="noopener">(69) 99968-8625</a>
+                <small>WhatsApp — resposta em até 24h úteis</small>
+              </span>
+            </li>
+            <li>
+              <span class="info-k">E-mail</span>
+              <span class="info-v"><a class="hover:text-terra transition-colors" href="mailto:ismailepereiramachado@gmail.com">ismailepereiramachado@gmail.com</a></span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="reveal">
+          <img src="src/img/ismaile.jpg" alt="Ismaile Pereira" class="w-full rounded-2xl object-cover border border-line" style="aspect-ratio:4/5" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+  </main>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ FECHAMENTO ═════ -->
+  <section class="cta-band relative z-10 px-6 md:px-12 lg:px-20 py-20 md:py-28">
+    <div class="cta-bg" aria-hidden="true">
+      <img src="src/img/proj/postos-savana.webp" alt="" loading="lazy">
+    </div>
+    <div class="max-w-3xl mx-auto reveal">
+      <p class="eyebrow" style="justify-content:center;color:#D4774F">Próximo passo</p>
+      <h2 class="h-section" style="color:#FBF9F2">Vamos começar o seu projeto?</h2>
+      <p class="lede mx-auto mt-4" style="color:rgba(244,240,230,.78);text-align:center">
+        Me conta o que o seu negócio faz e o que você precisa que o site tenha. Eu volto com escopo, prazo e preço por escrito.
+      </p>
+      <div class="flex flex-wrap gap-3 justify-center mt-8">
+        <a href="#agendar" class="bg-terra text-white px-6 py-3 rounded text-sm font-semibold hover:bg-terra-dark transition-colors inline-flex items-center gap-2">
+          <iconify-icon icon="solar:calendar-add-linear" width="16"></iconify-icon> Agendar orçamento
+        </a>
+        <a href="https://wa.me/5569999688625?text=Oi%20Ismaile!%20Vim%20pelo%20site." target="_blank" rel="noopener" class="px-6 py-3 rounded text-sm font-semibold text-canvas border transition-colors inline-flex items-center gap-2" style="border-color:rgba(244,240,230,.3)">
+          <iconify-icon icon="solar:chat-round-line-linear" width="16"></iconify-icon> Chamar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ RODAPÉ ═════ -->
+  <footer class="relative z-10 bg-forest text-canvas px-6 md:px-12 lg:px-20 py-12" style="border-top:1px solid rgba(244,240,230,.14)">
+    <div class="max-w-7xl mx-auto grid gap-8 md:grid-cols-3">
+      <div>
+        <div class="font-sans text-base font-extrabold tracking-tight">Ismaile Pereira</div>
+        <div class="mono text-[10px] uppercase tracking-[.15em] text-terra-light mt-1">Presença Digital</div>
+        <p class="text-sm mt-3" style="color:rgba(244,240,230,.7)">Mirante da Serra · Rondônia<br>Atendimento 100% online</p>
+      </div>
+      <nav class="flex flex-col gap-2" aria-label="Rodapé">
+        <a class="text-sm hover:text-terra-light transition-colors" style="color:rgba(244,240,230,.8)" href="#servicos">Serviços</a>
+        <a class="text-sm hover:text-terra-light transition-colors" style="color:rgba(244,240,230,.8)" href="#projetos">Projetos</a>
+        <a class="text-sm hover:text-terra-light transition-colors" style="color:rgba(244,240,230,.8)" href="#agendar">Agendar orçamento</a>
+        <a class="text-sm hover:text-terra-light transition-colors" style="color:rgba(244,240,230,.8)" href="https://ismailepereira.com.br/blog.html">Blog</a>
+      </nav>
+      <div>
+        <a href="https://wa.me/5569999688625" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-terra text-white px-5 py-2.5 rounded text-sm font-semibold hover:bg-terra-dark transition-colors">
+          <iconify-icon icon="solar:chat-round-line-linear" width="16"></iconify-icon> (69) 99968-8625
+        </a>
+        <p class="text-sm mt-3" style="color:rgba(244,240,230,.7)">ismailepereiramachado@gmail.com</p>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto mt-10 pt-6 text-xs" style="border-top:1px solid rgba(244,240,230,.14);color:rgba(244,240,230,.55)">
+      © <span id="ano">2026</span> Ismaile Pereira · Desenvolvido por
+      <a href="https://ismailepereira.github.io/" target="_blank" rel="noopener" class="text-terra-light hover:underline">ismailepereira</a>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Ismaile Pereira · Presença Digital",
+    "url": "https://ismailepereira.com.br/",
+    "description": "Criação de sites, lojas online, sistemas sob medida e campanhas no Meta e no Google.",
+    "areaServed": "BR",
+    "address": { "@type": "PostalAddress", "addressLocality": "Mirante da Serra", "addressRegion": "RO", "addressCountry": "BR" },
+    "founder": { "@type": "Person", "name": "Ismaile Pereira" },
+    "email": "ismailepereiramachado@gmail.com",
+    "telephone": "+5569999688625"
+  }
+  </script>
+
+  <script src="src/js/site.js" defer></script>
+</body>
+</html>
